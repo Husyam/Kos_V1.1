@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/pages/homepage.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/pages/logout_page.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/pages/cart_page.dart';
 
 import '../../../core/assets/assets.gen.dart';
@@ -30,13 +31,10 @@ class _DashboarPageState extends State<DashboardPage> {
     ),
 
     const CartPage(),
-
-    const Center(
-      child: Text('This Page cart'),
-    ),
-    const Center(
-      child: Text('This Page Account'),
-    ),
+    // const Center(
+    //   child: Text('This Page Account'),
+    // ),
+    const LogoutPage(),
   ];
 
   void _onItemTapped(int index) {

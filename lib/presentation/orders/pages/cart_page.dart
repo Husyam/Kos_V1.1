@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kos_mobile_v2_testing/data/datasources/auth_local_datasource.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/widgets/theme.dart';
 
 import '../../../core/components/buttons.dart';
@@ -183,13 +184,20 @@ class CartPage extends StatelessWidget {
                 },
               );
               return Button.filled(
-                onPressed: () {
-                  context.goNamed(
-                    RouteConstants.address,
-                    pathParameters: PathParameters(
-                      rootTab: RootTab.cart,
-                    ).toMap(),
-                  );
+                onPressed: () async {
+                  final isAuth = await AuthLocalDatasource().isAuth();
+                  if (!isAuth) {
+                    context.pushNamed(
+                      RouteConstants.login,
+                    );
+                  } else {
+                    context.goNamed(
+                      RouteConstants.address,
+                      pathParameters: PathParameters(
+                        rootTab: RootTab.cart,
+                      ).toMap(),
+                    );
+                  }
                 },
                 // label: 'Checkout (${carts.length})',
                 label: 'Checkout ($totalQty)',

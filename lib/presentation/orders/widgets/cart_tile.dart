@@ -112,7 +112,9 @@ class CartTile extends StatelessWidget {
                   const SpaceWidth(4.0),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text('${data.quantity}'),
+                    child: Text(
+                      '${data.quantity} bulan',
+                    ),
                   ),
                   const SpaceWidth(4.0),
                   ClipRRect(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kos_mobile_v2_testing/core/router/app_router.dart';
+import 'package:kos_mobile_v2_testing/data/datasources/auth_remote_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/category_remote_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/product_remote_datasource.dart';
+import 'package:kos_mobile_v2_testing/presentation/auth/bloc/login/login_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/auth/bloc/logout/logout_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/all_product/all_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/bidar_product/bidar_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/checkout/checkout_bloc.dart';
@@ -37,6 +40,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CheckoutBloc(),
+        ),
+        BlocProvider(
+          create: (context) => LoginBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => LogoutBloc(AuthRemoteDatasource()),
         ),
       ],
       child: MaterialApp.router(

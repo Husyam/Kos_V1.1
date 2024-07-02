@@ -27,12 +27,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notification.svg
   String get notification => 'assets/icons/notification.svg';
 
+  /// File path: assets/icons/order.svg
+  String get order => 'assets/icons/order.svg';
+
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
 
   /// List of all assets
   List<String> get values =>
-      [cart, home, like, markerLocation, notification, profile];
+      [cart, home, like, markerLocation, notification, order, profile];
 }
 
 class $AssetsImagesGen {
@@ -85,6 +88,9 @@ class $AssetsImagesGen {
   AssetGenImage get icons8Width401 =>
       const AssetGenImage('assets/images/icons8-width-40 1.png');
 
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
   /// File path: assets/images/maps dumy.png
   AssetGenImage get mapsDumy =>
       const AssetGenImage('assets/images/maps dumy.png');
@@ -116,6 +122,7 @@ class $AssetsImagesGen {
         icons8Bedroom641,
         icons8Toilet961,
         icons8Width401,
+        logo,
         mapsDumy,
         oops,
         processOrder,

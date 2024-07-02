@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'checkout_bloc.dart';
+part of 'logout_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CheckoutEvent {
+mixin _$LogoutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Product product) addItem,
-    required TResult Function(Product product) removeItem,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(Product product)? addItem,
-    TResult? Function(Product product)? removeItem,
+    TResult? Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Product product)? addItem,
-    TResult Function(Product product)? removeItem,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddItem value) addItem,
-    required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_Logout value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddItem value)? addItem,
-    TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_Logout value)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddItem value)? addItem,
-    TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CheckoutEventCopyWith<$Res> {
-  factory $CheckoutEventCopyWith(
-          CheckoutEvent value, $Res Function(CheckoutEvent) then) =
-      _$CheckoutEventCopyWithImpl<$Res, CheckoutEvent>;
+abstract class $LogoutEventCopyWith<$Res> {
+  factory $LogoutEventCopyWith(
+          LogoutEvent value, $Res Function(LogoutEvent) then) =
+      _$LogoutEventCopyWithImpl<$Res, LogoutEvent>;
 }
 
 /// @nodoc
-class _$CheckoutEventCopyWithImpl<$Res, $Val extends CheckoutEvent>
-    implements $CheckoutEventCopyWith<$Res> {
-  _$CheckoutEventCopyWithImpl(this._value, this._then);
+class _$LogoutEventCopyWithImpl<$Res, $Val extends LogoutEvent>
+    implements $LogoutEventCopyWith<$Res> {
+  _$LogoutEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$LogoutEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -103,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'CheckoutEvent.started()';
+    return 'LogoutEvent.started()';
   }
 
   @override
@@ -119,8 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Product product) addItem,
-    required TResult Function(Product product) removeItem,
+    required TResult Function() logout,
   }) {
     return started();
   }
@@ -129,8 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(Product product)? addItem,
-    TResult? Function(Product product)? removeItem,
+    TResult? Function()? logout,
   }) {
     return started?.call();
   }
@@ -139,8 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Product product)? addItem,
-    TResult Function(Product product)? removeItem,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -153,8 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddItem value) addItem,
-    required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_Logout value) logout,
   }) {
     return started(this);
   }
@@ -163,8 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddItem value)? addItem,
-    TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_Logout value)? logout,
   }) {
     return started?.call(this);
   }
@@ -173,8 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddItem value)? addItem,
-    TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -184,101 +172,72 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements CheckoutEvent {
+abstract class _Started implements LogoutEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$AddItemImplCopyWith<$Res> {
-  factory _$$AddItemImplCopyWith(
-          _$AddItemImpl value, $Res Function(_$AddItemImpl) then) =
-      __$$AddItemImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Product product});
+abstract class _$$LogoutImplCopyWith<$Res> {
+  factory _$$LogoutImplCopyWith(
+          _$LogoutImpl value, $Res Function(_$LogoutImpl) then) =
+      __$$LogoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddItemImplCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$AddItemImpl>
-    implements _$$AddItemImplCopyWith<$Res> {
-  __$$AddItemImplCopyWithImpl(
-      _$AddItemImpl _value, $Res Function(_$AddItemImpl) _then)
+class __$$LogoutImplCopyWithImpl<$Res>
+    extends _$LogoutEventCopyWithImpl<$Res, _$LogoutImpl>
+    implements _$$LogoutImplCopyWith<$Res> {
+  __$$LogoutImplCopyWithImpl(
+      _$LogoutImpl _value, $Res Function(_$LogoutImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? product = null,
-  }) {
-    return _then(_$AddItemImpl(
-      null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as Product,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$AddItemImpl implements _AddItem {
-  const _$AddItemImpl(this.product);
-
-  @override
-  final Product product;
+class _$LogoutImpl implements _Logout {
+  const _$LogoutImpl();
 
   @override
   String toString() {
-    return 'CheckoutEvent.addItem(product: $product)';
+    return 'LogoutEvent.logout()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddItemImpl &&
-            (identical(other.product, product) || other.product == product));
+        (other.runtimeType == runtimeType && other is _$LogoutImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, product);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddItemImplCopyWith<_$AddItemImpl> get copyWith =>
-      __$$AddItemImplCopyWithImpl<_$AddItemImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Product product) addItem,
-    required TResult Function(Product product) removeItem,
+    required TResult Function() logout,
   }) {
-    return addItem(product);
+    return logout();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(Product product)? addItem,
-    TResult? Function(Product product)? removeItem,
+    TResult? Function()? logout,
   }) {
-    return addItem?.call(product);
+    return logout?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Product product)? addItem,
-    TResult Function(Product product)? removeItem,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
-    if (addItem != null) {
-      return addItem(product);
+    if (logout != null) {
+      return logout();
     }
     return orElse();
   }
@@ -287,192 +246,45 @@ class _$AddItemImpl implements _AddItem {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_AddItem value) addItem,
-    required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_Logout value) logout,
   }) {
-    return addItem(this);
+    return logout(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_AddItem value)? addItem,
-    TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_Logout value)? logout,
   }) {
-    return addItem?.call(this);
+    return logout?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_AddItem value)? addItem,
-    TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) {
-    if (addItem != null) {
-      return addItem(this);
+    if (logout != null) {
+      return logout(this);
     }
     return orElse();
   }
 }
 
-abstract class _AddItem implements CheckoutEvent {
-  const factory _AddItem(final Product product) = _$AddItemImpl;
-
-  Product get product;
-  @JsonKey(ignore: true)
-  _$$AddItemImplCopyWith<_$AddItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Logout implements LogoutEvent {
+  const factory _Logout() = _$LogoutImpl;
 }
 
 /// @nodoc
-abstract class _$$RemoveItemImplCopyWith<$Res> {
-  factory _$$RemoveItemImplCopyWith(
-          _$RemoveItemImpl value, $Res Function(_$RemoveItemImpl) then) =
-      __$$RemoveItemImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Product product});
-}
-
-/// @nodoc
-class __$$RemoveItemImplCopyWithImpl<$Res>
-    extends _$CheckoutEventCopyWithImpl<$Res, _$RemoveItemImpl>
-    implements _$$RemoveItemImplCopyWith<$Res> {
-  __$$RemoveItemImplCopyWithImpl(
-      _$RemoveItemImpl _value, $Res Function(_$RemoveItemImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? product = null,
-  }) {
-    return _then(_$RemoveItemImpl(
-      null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as Product,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RemoveItemImpl implements _RemoveItem {
-  const _$RemoveItemImpl(this.product);
-
-  @override
-  final Product product;
-
-  @override
-  String toString() {
-    return 'CheckoutEvent.removeItem(product: $product)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RemoveItemImpl &&
-            (identical(other.product, product) || other.product == product));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, product);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
-      __$$RemoveItemImplCopyWithImpl<_$RemoveItemImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(Product product) addItem,
-    required TResult Function(Product product) removeItem,
-  }) {
-    return removeItem(product);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(Product product)? addItem,
-    TResult? Function(Product product)? removeItem,
-  }) {
-    return removeItem?.call(product);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(Product product)? addItem,
-    TResult Function(Product product)? removeItem,
-    required TResult orElse(),
-  }) {
-    if (removeItem != null) {
-      return removeItem(product);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_AddItem value) addItem,
-    required TResult Function(_RemoveItem value) removeItem,
-  }) {
-    return removeItem(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_AddItem value)? addItem,
-    TResult? Function(_RemoveItem value)? removeItem,
-  }) {
-    return removeItem?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_AddItem value)? addItem,
-    TResult Function(_RemoveItem value)? removeItem,
-    required TResult orElse(),
-  }) {
-    if (removeItem != null) {
-      return removeItem(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RemoveItem implements CheckoutEvent {
-  const factory _RemoveItem(final Product product) = _$RemoveItemImpl;
-
-  Product get product;
-  @JsonKey(ignore: true)
-  _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$CheckoutState {
+mixin _$LogoutState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -480,7 +292,7 @@ mixin _$CheckoutState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -488,7 +300,7 @@ mixin _$CheckoutState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -521,16 +333,16 @@ mixin _$CheckoutState {
 }
 
 /// @nodoc
-abstract class $CheckoutStateCopyWith<$Res> {
-  factory $CheckoutStateCopyWith(
-          CheckoutState value, $Res Function(CheckoutState) then) =
-      _$CheckoutStateCopyWithImpl<$Res, CheckoutState>;
+abstract class $LogoutStateCopyWith<$Res> {
+  factory $LogoutStateCopyWith(
+          LogoutState value, $Res Function(LogoutState) then) =
+      _$LogoutStateCopyWithImpl<$Res, LogoutState>;
 }
 
 /// @nodoc
-class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
-    implements $CheckoutStateCopyWith<$Res> {
-  _$CheckoutStateCopyWithImpl(this._value, this._then);
+class _$LogoutStateCopyWithImpl<$Res, $Val extends LogoutState>
+    implements $LogoutStateCopyWith<$Res> {
+  _$LogoutStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -547,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$LogoutStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -561,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CheckoutState.initial()';
+    return 'LogoutState.initial()';
   }
 
   @override
@@ -578,7 +390,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -589,7 +401,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -600,7 +412,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -648,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements CheckoutState {
+abstract class _Initial implements LogoutState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -661,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -675,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'CheckoutState.loading()';
+    return 'LogoutState.loading()';
   }
 
   @override
@@ -692,7 +504,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -703,7 +515,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -714,7 +526,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -762,7 +574,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements CheckoutState {
+abstract class _Loading implements LogoutState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -771,78 +583,45 @@ abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<ProductQuantity> products});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? products = null,
-  }) {
-    return _then(_$LoadedImpl(
-      null == products
-          ? _value._products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<ProductQuantity>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<ProductQuantity> products)
-      : _products = products;
-
-  final List<ProductQuantity> _products;
-  @override
-  List<ProductQuantity> get products {
-    if (_products is EqualUnmodifiableListView) return _products;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_products);
-  }
+  const _$LoadedImpl();
 
   @override
   String toString() {
-    return 'CheckoutState.loaded(products: $products)';
+    return 'LogoutState.loaded()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._products, _products));
+        (other.runtimeType == runtimeType && other is _$LoadedImpl);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_products));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(products);
+    return loaded();
   }
 
   @override
@@ -850,10 +629,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(products);
+    return loaded?.call();
   }
 
   @override
@@ -861,12 +640,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(products);
+      return loaded();
     }
     return orElse();
   }
@@ -909,13 +688,8 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements CheckoutState {
-  const factory _Loaded(final List<ProductQuantity> products) = _$LoadedImpl;
-
-  List<ProductQuantity> get products;
-  @JsonKey(ignore: true)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Loaded implements LogoutState {
+  const factory _Loaded() = _$LoadedImpl;
 }
 
 /// @nodoc
@@ -929,7 +703,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$CheckoutStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$LogoutStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -959,7 +733,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'CheckoutState.error(message: $message)';
+    return 'LogoutState.error(message: $message)';
   }
 
   @override
@@ -984,7 +758,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -995,7 +769,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1006,7 +780,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1054,7 +828,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements CheckoutState {
+abstract class _Error implements LogoutState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;

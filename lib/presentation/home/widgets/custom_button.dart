@@ -6,6 +6,7 @@ class CustomButton extends StatelessWidget {
   final double width;
   final Function() onPressed;
   final EdgeInsets margin;
+  final TextStyle? textStyle;
 
   const CustomButton({
     Key? key,
@@ -13,6 +14,7 @@ class CustomButton extends StatelessWidget {
     this.width = double.infinity,
     required this.onPressed,
     this.margin = EdgeInsets.zero,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -31,9 +33,10 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: whiteMediumTextStyle.copyWith(
-            fontSize: 18,
-          ),
+          style: textStyle ??
+              whiteMediumTextStyle.copyWith(
+                fontSize: 18,
+              ),
         ),
       ),
     );
