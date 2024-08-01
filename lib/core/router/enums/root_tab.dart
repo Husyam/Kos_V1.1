@@ -5,8 +5,9 @@ enum RootTab {
   maps('1'),
   like('2'),
   account('3'),
-  cart('4'),
-  dataDiri('5');
+  search('4'),
+  cart('5');
+  // dataDiri('5'),
 
   final String value;
   const RootTab(this.value);

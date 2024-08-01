@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "428357408268",
+    "project_id": "kos-pal",
+    "storage_bucket": "kos-pal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428357408268:android:85217341509104808b4029",
+        "android_client_info": {
+          "package_name": "com.example.kos_mobile_v2_testing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQbTzsSBgctW63jGq_GFLYxGmDKMcFiyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

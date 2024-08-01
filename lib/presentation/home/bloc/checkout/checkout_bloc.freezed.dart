@@ -21,6 +21,8 @@ mixin _$CheckoutEvent {
     required TResult Function() started,
     required TResult Function(Product product) addItem,
     required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$CheckoutEvent {
     TResult? Function()? started,
     TResult? Function(Product product)? addItem,
     TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$CheckoutEvent {
     TResult Function()? started,
     TResult Function(Product product)? addItem,
     TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$CheckoutEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_AddItem value) addItem,
     required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$CheckoutEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddItem value)? addItem,
     TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$CheckoutEvent {
     TResult Function(_Started value)? started,
     TResult Function(_AddItem value)? addItem,
     TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +133,8 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function(Product product) addItem,
     required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
   }) {
     return started();
   }
@@ -131,6 +145,8 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function(Product product)? addItem,
     TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
   }) {
     return started?.call();
   }
@@ -141,6 +157,8 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function(Product product)? addItem,
     TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -155,6 +173,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_AddItem value) addItem,
     required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
   }) {
     return started(this);
   }
@@ -165,6 +185,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddItem value)? addItem,
     TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
   }) {
     return started?.call(this);
   }
@@ -175,6 +197,8 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_AddItem value)? addItem,
     TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -255,6 +279,8 @@ class _$AddItemImpl implements _AddItem {
     required TResult Function() started,
     required TResult Function(Product product) addItem,
     required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
   }) {
     return addItem(product);
   }
@@ -265,6 +291,8 @@ class _$AddItemImpl implements _AddItem {
     TResult? Function()? started,
     TResult? Function(Product product)? addItem,
     TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
   }) {
     return addItem?.call(product);
   }
@@ -275,6 +303,8 @@ class _$AddItemImpl implements _AddItem {
     TResult Function()? started,
     TResult Function(Product product)? addItem,
     TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (addItem != null) {
@@ -289,6 +319,8 @@ class _$AddItemImpl implements _AddItem {
     required TResult Function(_Started value) started,
     required TResult Function(_AddItem value) addItem,
     required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
   }) {
     return addItem(this);
   }
@@ -299,6 +331,8 @@ class _$AddItemImpl implements _AddItem {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddItem value)? addItem,
     TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
   }) {
     return addItem?.call(this);
   }
@@ -309,6 +343,8 @@ class _$AddItemImpl implements _AddItem {
     TResult Function(_Started value)? started,
     TResult Function(_AddItem value)? addItem,
     TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (addItem != null) {
@@ -394,6 +430,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     required TResult Function() started,
     required TResult Function(Product product) addItem,
     required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
   }) {
     return removeItem(product);
   }
@@ -404,6 +442,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     TResult? Function()? started,
     TResult? Function(Product product)? addItem,
     TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
   }) {
     return removeItem?.call(product);
   }
@@ -414,6 +454,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     TResult Function()? started,
     TResult Function(Product product)? addItem,
     TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (removeItem != null) {
@@ -428,6 +470,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     required TResult Function(_Started value) started,
     required TResult Function(_AddItem value) addItem,
     required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
   }) {
     return removeItem(this);
   }
@@ -438,6 +482,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddItem value)? addItem,
     TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
   }) {
     return removeItem?.call(this);
   }
@@ -448,6 +494,8 @@ class _$RemoveItemImpl implements _RemoveItem {
     TResult Function(_Started value)? started,
     TResult Function(_AddItem value)? addItem,
     TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
     required TResult orElse(),
   }) {
     if (removeItem != null) {
@@ -467,12 +515,322 @@ abstract class _RemoveItem implements CheckoutEvent {
 }
 
 /// @nodoc
+abstract class _$$AddPersonalDataIdImplCopyWith<$Res> {
+  factory _$$AddPersonalDataIdImplCopyWith(_$AddPersonalDataIdImpl value,
+          $Res Function(_$AddPersonalDataIdImpl) then) =
+      __$$AddPersonalDataIdImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int personalDataId});
+}
+
+/// @nodoc
+class __$$AddPersonalDataIdImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$AddPersonalDataIdImpl>
+    implements _$$AddPersonalDataIdImplCopyWith<$Res> {
+  __$$AddPersonalDataIdImplCopyWithImpl(_$AddPersonalDataIdImpl _value,
+      $Res Function(_$AddPersonalDataIdImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personalDataId = null,
+  }) {
+    return _then(_$AddPersonalDataIdImpl(
+      null == personalDataId
+          ? _value.personalDataId
+          : personalDataId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddPersonalDataIdImpl implements _AddPersonalDataId {
+  const _$AddPersonalDataIdImpl(this.personalDataId);
+
+  @override
+  final int personalDataId;
+
+  @override
+  String toString() {
+    return 'CheckoutEvent.addPersonalDataId(personalDataId: $personalDataId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddPersonalDataIdImpl &&
+            (identical(other.personalDataId, personalDataId) ||
+                other.personalDataId == personalDataId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, personalDataId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddPersonalDataIdImplCopyWith<_$AddPersonalDataIdImpl> get copyWith =>
+      __$$AddPersonalDataIdImplCopyWithImpl<_$AddPersonalDataIdImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Product product) addItem,
+    required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
+  }) {
+    return addPersonalDataId(personalDataId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(Product product)? addItem,
+    TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
+  }) {
+    return addPersonalDataId?.call(personalDataId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Product product)? addItem,
+    TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (addPersonalDataId != null) {
+      return addPersonalDataId(personalDataId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
+  }) {
+    return addPersonalDataId(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_AddItem value)? addItem,
+    TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
+  }) {
+    return addPersonalDataId?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (addPersonalDataId != null) {
+      return addPersonalDataId(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddPersonalDataId implements CheckoutEvent {
+  const factory _AddPersonalDataId(final int personalDataId) =
+      _$AddPersonalDataIdImpl;
+
+  int get personalDataId;
+  @JsonKey(ignore: true)
+  _$$AddPersonalDataIdImplCopyWith<_$AddPersonalDataIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddPaymentMethodImplCopyWith<$Res> {
+  factory _$$AddPaymentMethodImplCopyWith(_$AddPaymentMethodImpl value,
+          $Res Function(_$AddPaymentMethodImpl) then) =
+      __$$AddPaymentMethodImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String paymentMethod});
+}
+
+/// @nodoc
+class __$$AddPaymentMethodImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$AddPaymentMethodImpl>
+    implements _$$AddPaymentMethodImplCopyWith<$Res> {
+  __$$AddPaymentMethodImplCopyWithImpl(_$AddPaymentMethodImpl _value,
+      $Res Function(_$AddPaymentMethodImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? paymentMethod = null,
+  }) {
+    return _then(_$AddPaymentMethodImpl(
+      null == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddPaymentMethodImpl implements _AddPaymentMethod {
+  const _$AddPaymentMethodImpl(this.paymentMethod);
+
+  @override
+  final String paymentMethod;
+
+  @override
+  String toString() {
+    return 'CheckoutEvent.addPaymentMethod(paymentMethod: $paymentMethod)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddPaymentMethodImpl &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, paymentMethod);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddPaymentMethodImplCopyWith<_$AddPaymentMethodImpl> get copyWith =>
+      __$$AddPaymentMethodImplCopyWithImpl<_$AddPaymentMethodImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Product product) addItem,
+    required TResult Function(Product product) removeItem,
+    required TResult Function(int personalDataId) addPersonalDataId,
+    required TResult Function(String paymentMethod) addPaymentMethod,
+  }) {
+    return addPaymentMethod(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(Product product)? addItem,
+    TResult? Function(Product product)? removeItem,
+    TResult? Function(int personalDataId)? addPersonalDataId,
+    TResult? Function(String paymentMethod)? addPaymentMethod,
+  }) {
+    return addPaymentMethod?.call(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Product product)? addItem,
+    TResult Function(Product product)? removeItem,
+    TResult Function(int personalDataId)? addPersonalDataId,
+    TResult Function(String paymentMethod)? addPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (addPaymentMethod != null) {
+      return addPaymentMethod(paymentMethod);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_AddItem value) addItem,
+    required TResult Function(_RemoveItem value) removeItem,
+    required TResult Function(_AddPersonalDataId value) addPersonalDataId,
+    required TResult Function(_AddPaymentMethod value) addPaymentMethod,
+  }) {
+    return addPaymentMethod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_AddItem value)? addItem,
+    TResult? Function(_RemoveItem value)? removeItem,
+    TResult? Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult? Function(_AddPaymentMethod value)? addPaymentMethod,
+  }) {
+    return addPaymentMethod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_AddItem value)? addItem,
+    TResult Function(_RemoveItem value)? removeItem,
+    TResult Function(_AddPersonalDataId value)? addPersonalDataId,
+    TResult Function(_AddPaymentMethod value)? addPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (addPaymentMethod != null) {
+      return addPaymentMethod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddPaymentMethod implements CheckoutEvent {
+  const factory _AddPaymentMethod(final String paymentMethod) =
+      _$AddPaymentMethodImpl;
+
+  String get paymentMethod;
+  @JsonKey(ignore: true)
+  _$$AddPaymentMethodImplCopyWith<_$AddPaymentMethodImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CheckoutState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function(List<ProductQuantity> products,
+            int personalDataId, String paymentVaName, String paymentMethod)
+        loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -480,7 +838,9 @@ mixin _$CheckoutState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -488,7 +848,9 @@ mixin _$CheckoutState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -578,7 +940,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function(List<ProductQuantity> products,
+            int personalDataId, String paymentVaName, String paymentMethod)
+        loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -589,7 +953,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -600,7 +966,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -692,7 +1060,9 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function(List<ProductQuantity> products,
+            int personalDataId, String paymentVaName, String paymentMethod)
+        loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -703,7 +1073,9 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -714,7 +1086,9 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -772,7 +1146,11 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ProductQuantity> products});
+  $Res call(
+      {List<ProductQuantity> products,
+      int personalDataId,
+      String paymentVaName,
+      String paymentMethod});
 }
 
 /// @nodoc
@@ -787,12 +1165,27 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? products = null,
+    Object? personalDataId = null,
+    Object? paymentVaName = null,
+    Object? paymentMethod = null,
   }) {
     return _then(_$LoadedImpl(
       null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<ProductQuantity>,
+      null == personalDataId
+          ? _value.personalDataId
+          : personalDataId // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == paymentVaName
+          ? _value.paymentVaName
+          : paymentVaName // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -800,7 +1193,8 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<ProductQuantity> products)
+  const _$LoadedImpl(final List<ProductQuantity> products, this.personalDataId,
+      this.paymentVaName, this.paymentMethod)
       : _products = products;
 
   final List<ProductQuantity> _products;
@@ -812,8 +1206,15 @@ class _$LoadedImpl implements _Loaded {
   }
 
   @override
+  final int personalDataId;
+  @override
+  final String paymentVaName;
+  @override
+  final String paymentMethod;
+
+  @override
   String toString() {
-    return 'CheckoutState.loaded(products: $products)';
+    return 'CheckoutState.loaded(products: $products, personalDataId: $personalDataId, paymentVaName: $paymentVaName, paymentMethod: $paymentMethod)';
   }
 
   @override
@@ -821,12 +1222,22 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._products, _products));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.personalDataId, personalDataId) ||
+                other.personalDataId == personalDataId) &&
+            (identical(other.paymentVaName, paymentVaName) ||
+                other.paymentVaName == paymentVaName) &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_products));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_products),
+      personalDataId,
+      paymentVaName,
+      paymentMethod);
 
   @JsonKey(ignore: true)
   @override
@@ -839,10 +1250,12 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function(List<ProductQuantity> products,
+            int personalDataId, String paymentVaName, String paymentMethod)
+        loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(products);
+    return loaded(products, personalDataId, paymentVaName, paymentMethod);
   }
 
   @override
@@ -850,10 +1263,12 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(products);
+    return loaded?.call(products, personalDataId, paymentVaName, paymentMethod);
   }
 
   @override
@@ -861,12 +1276,14 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(products);
+      return loaded(products, personalDataId, paymentVaName, paymentMethod);
     }
     return orElse();
   }
@@ -910,9 +1327,16 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements CheckoutState {
-  const factory _Loaded(final List<ProductQuantity> products) = _$LoadedImpl;
+  const factory _Loaded(
+      final List<ProductQuantity> products,
+      final int personalDataId,
+      final String paymentVaName,
+      final String paymentMethod) = _$LoadedImpl;
 
   List<ProductQuantity> get products;
+  int get personalDataId;
+  String get paymentVaName;
+  String get paymentMethod;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -984,7 +1408,9 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<ProductQuantity> products) loaded,
+    required TResult Function(List<ProductQuantity> products,
+            int personalDataId, String paymentVaName, String paymentMethod)
+        loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -995,7 +1421,9 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<ProductQuantity> products)? loaded,
+    TResult? Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1006,7 +1434,9 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<ProductQuantity> products)? loaded,
+    TResult Function(List<ProductQuantity> products, int personalDataId,
+            String paymentVaName, String paymentMethod)?
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

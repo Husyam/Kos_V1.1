@@ -102,6 +102,8 @@ class Data {
         "to": to,
         "total": total,
       };
+
+  where(Function(dynamic product) param0) {}
 }
 
 class Product {

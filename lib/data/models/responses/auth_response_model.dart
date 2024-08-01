@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 class AuthResponseModel {
-  final String? accesToken;
+  final String? accessToken;
   final User? user;
 
   AuthResponseModel({
-    this.accesToken,
+    this.accessToken,
     this.user,
   });
 
@@ -16,12 +16,12 @@ class AuthResponseModel {
 
   factory AuthResponseModel.fromMap(Map<String, dynamic> json) =>
       AuthResponseModel(
-        accesToken: json["acces_token"],
+        accessToken: json["access_token"],
         user: json["user"] == null ? null : User.fromMap(json["user"]),
       );
 
   Map<String, dynamic> toMap() => {
-        "acces_token": accesToken,
+        "access_token": accessToken,
         "user": user?.toMap(),
       };
 }
@@ -30,6 +30,7 @@ class User {
   final int? id;
   final String? name;
   final String? email;
+  final String? fcmId;
   final String? phone;
   final String? roles;
   final dynamic emailVerifiedAt;
@@ -43,6 +44,7 @@ class User {
     this.id,
     this.name,
     this.email,
+    this.fcmId,
     this.phone,
     this.roles,
     this.emailVerifiedAt,
@@ -61,6 +63,7 @@ class User {
         id: json["id"],
         name: json["name"],
         email: json["email"],
+        fcmId: json["fcm_id"],
         phone: json["phone"],
         roles: json["roles"],
         emailVerifiedAt: json["email_verified_at"],
@@ -79,6 +82,7 @@ class User {
         "id": id,
         "name": name,
         "email": email,
+        "fcm_id": fcmId,
         "phone": phone,
         "roles": roles,
         "email_verified_at": emailVerifiedAt,

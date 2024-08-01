@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kos_mobile_v2_testing/data/models/responses/history_order_response_model.dart';
 
 import '../../../core/components/buttons.dart';
 import '../../../core/components/spaces.dart';
@@ -10,17 +11,25 @@ import '../pages/order_detail_page.dart';
 import 'row_text.dart';
 
 class OrderCard extends StatelessWidget {
-  final TransactionModel data;
+  final HistoryOrder data;
   const OrderCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.goNamed(
-          RouteConstants.trackingOrder,
-          pathParameters: PathParameters().toMap(),
-        );
+        if (data.id != null) {
+          context.pushNamed(
+            RouteConstants.trackingOrder,
+            pathParameters: PathParameters().toMap(),
+            extra: data.id,
+          );
+        } else {
+          // Tangani kasus id null jika diperlukan
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Order ID is null')),
+          );
+        }
       },
       child: Container(
         padding: const EdgeInsets.all(16.0),
@@ -33,25 +42,37 @@ class OrderCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'NO RESI: ${data.noResi}',
-                  style: const TextStyle(fontWeight: FontWeight.w700),
+                const Text(
+                  'Status',
+                  style: TextStyle(color: AppColors.black),
                 ),
-                Button.filled(
-                  onPressed: () {},
-                  label: 'Lacak',
-                  height: 20.0,
-                  width: 94.0,
-                  fontSize: 11.0,
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 4.0,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+                    border: Border.all(color: AppColors.stroke),
+                    color: AppColors.primary,
+                  ),
+                  child: Text(
+                    data.status ?? '-',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ],
             ),
-            const SpaceHeight(24.0),
-            RowText(label: 'Status', value: data.status),
+            // RowText(label: 'Status', value: data.status ?? '-'),
             const SpaceHeight(12.0),
-            RowText(label: 'Item', value: data.item),
-            const SpaceHeight(12.0),
-            RowText(label: 'Harga', value: data.priceFormat),
+            RowText(
+              label: 'Total Harga',
+              value: data.totalCost?.currencyFormatRp ?? '-',
+            ),
           ],
         ),
       ),

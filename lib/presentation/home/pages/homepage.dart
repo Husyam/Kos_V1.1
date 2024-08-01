@@ -14,6 +14,7 @@ import '../../../core/router/app_router.dart';
 import '../widgets/banner_slider.dart';
 import '../widgets/organism/menu_categories.dart';
 import '../widgets/organism/product_list.dart';
+import '../widgets/theme.dart';
 import '../widgets/title_content.dart';
 
 import 'package:badges/badges.dart' as badges;
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<String> banners1 = [
     Assets.images.banner1.path,
-    Assets.images.banner1.path,
+    Assets.images.banner2.path,
   ];
 
   @override
@@ -63,12 +64,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0XFFFAFAFA),
       appBar: AppBar(
-        title: const Text('Cwb Store'),
+        title: const Text('KosPal'),
+        backgroundColor: bgColor,
         actions: [
           BlocBuilder<CheckoutBloc, CheckoutState>(
             builder: (context, state) {
               return state.maybeWhen(
-                loaded: (checkout) {
+                loaded: (checkout, _, __, ___) {
                   final totalQuantity = checkout.fold<int>(
                     0,
                     (previousValue, element) =>
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
               context.pushReplacementNamed(
                 RouteConstants.root,
                 pathParameters: PathParameters(
-                  rootTab: RootTab.maps,
+                  rootTab: RootTab.search,
                 ).toMap(),
               );
             },

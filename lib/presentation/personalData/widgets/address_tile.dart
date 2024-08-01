@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:kos_mobile_v2_testing/data/models/responses/personalData_response_model.dart';
 
 import '../../../core/components/spaces.dart';
 import '../../../core/core.dart';
-import '../models/address_model.dart';
 
 class AddressTile extends StatelessWidget {
   final bool isSelected;
-  final AddressModel data;
+  final Personal data;
   final VoidCallback onTap;
   final VoidCallback onEditTap;
 
@@ -45,7 +44,7 @@ class AddressTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
-                '${data.fullName} - ${data.primaryAddressText}',
+                '${data.name} - ${data.gender}',
                 style: const TextStyle(
                   fontSize: 16,
                 ),
@@ -59,7 +58,7 @@ class AddressTile extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      data.fullAddress,
+                      data.contact!,
                       style: const TextStyle(
                         fontSize: 16,
                       ),

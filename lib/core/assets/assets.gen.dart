@@ -68,6 +68,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/user.svg
   SvgGenImage get user => const SvgGenImage('assets/icons/user.svg');
 
+  //search
+  /// File path: assets/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         bag,
@@ -85,7 +89,8 @@ class $AssetsIconsGen {
         routing,
         like,
         shieldDone,
-        user
+        user,
+        search,
       ];
 }
 
@@ -98,7 +103,8 @@ class $AssetsImagesGen {
   AssetGenImage get banner1 => const AssetGenImage('assets/images/banner1.png');
 
   /// File path: assets/images/banner2.png
-  AssetGenImage get banner2 => const AssetGenImage('assets/images/banner2.png');
+  AssetGenImage get banner2 =>
+      const AssetGenImage('assets/images/banner21.jpeg');
 
   $AssetsImagesCategoriesGen get categories =>
       const $AssetsImagesCategoriesGen();

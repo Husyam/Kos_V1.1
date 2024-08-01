@@ -15,6 +15,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/copy.svg
+  String get copy => 'assets/icons/copy.svg';
+
+  /// File path: assets/icons/email.svg
+  String get email => 'assets/icons/email.svg';
+
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
 
@@ -30,12 +36,29 @@ class $AssetsIconsGen {
   /// File path: assets/icons/order.svg
   String get order => 'assets/icons/order.svg';
 
+  /// File path: assets/icons/password.svg
+  String get password => 'assets/icons/password.svg';
+
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
 
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
   /// List of all assets
-  List<String> get values =>
-      [cart, home, like, markerLocation, notification, order, profile];
+  List<String> get values => [
+        cart,
+        copy,
+        email,
+        home,
+        like,
+        markerLocation,
+        notification,
+        order,
+        password,
+        profile,
+        search
+      ];
 }
 
 class $AssetsImagesGen {
@@ -44,6 +67,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Lokasi_marker.png
   AssetGenImage get lokasiMarker =>
       const AssetGenImage('assets/images/Lokasi_marker.png');
+
+  /// File path: assets/images/Love_icons.png
+  AssetGenImage get loveIcons =>
+      const AssetGenImage('assets/images/Love_icons.png');
 
   /// File path: assets/images/Profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/Profile.png');
@@ -75,6 +102,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
+  /// File path: assets/images/history_icons.png
+  AssetGenImage get historyIcons =>
+      const AssetGenImage('assets/images/history_icons.png');
 
   /// File path: assets/images/icons8-bedroom-64 1.png
   AssetGenImage get icons8Bedroom641 =>
@@ -112,6 +143,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         lokasiMarker,
+        loveIcons,
         profile,
         banner1,
         banner2,
@@ -119,6 +151,7 @@ class $AssetsImagesGen {
         btnWishlist,
         callIcons,
         google,
+        historyIcons,
         icons8Bedroom641,
         icons8Toilet961,
         icons8Width401,

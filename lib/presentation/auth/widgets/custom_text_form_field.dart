@@ -33,7 +33,10 @@ class CustomTextFormField extends StatelessWidget {
             cursorColor: blackColor,
             obscureText: obscureText,
             controller: controller,
-            keyboardType: TextInputType.number,
+            //jika type text makan akan menampilkan keyboard biasa jika type number akan menampilkan keyboard number
+            keyboardType: keyboardType == 'number'
+                ? TextInputType.number
+                : TextInputType.text,
             decoration: InputDecoration(
               hintText: hintText,
               border: OutlineInputBorder(

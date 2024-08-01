@@ -1,26 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/widgets/theme.dart';
 
 import '../../../core/router/app_router.dart';
-import '../../home/pages/homepage.dart';
 import '../../home/widgets/custom_button.dart';
+import '../bloc/register/register_bloc.dart';
 import '../widgets/custom_field_password.dart';
 import '../widgets/custom_text_form_field.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController nameController = TextEditingController(text: '');
   final TextEditingController emailController = TextEditingController(text: '');
-  final TextEditingController contactController =
-      TextEditingController(text: '');
-  final TextEditingController jenKelController =
-      TextEditingController(text: '');
-  final TextEditingController profesiController =
-      TextEditingController(text: '');
-  final TextEditingController passwordController =
-      TextEditingController(text: '');
+  final TextEditingController contactController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void _onSignUpPressed(BuildContext context) {
+    final name = nameController.text.trim();
+    final email = emailController.text.trim();
+    final phone = contactController.text.trim();
+    final password = passwordController.text.trim();
+
+    print('Name: $name');
+    print('Email: $email');
+    print('Phone: $phone');
+    print('Password: $password');
+
+    if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Please fill in all fields')),
+      );
+      return;
+    }
+
+    context.read<RegisterBloc>().add(
+          RegisterEvent.register(
+            name: name,
+            email: email,
+            phone: phone,
+            password: password,
+          ),
+        );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +92,7 @@ class RegisterPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Sign in To  FindKos',
+              'Register Account',
               style: blackBoldTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
@@ -99,45 +132,20 @@ class RegisterPage extends StatelessWidget {
           title: 'No HP',
           hintText: 'Input your No.telpon',
           controller: contactController,
-          keyboardType: 'number',
-        );
-      }
-
-      Widget jenKelInput() {
-        return CustomTextFormField(
-          title: 'Jenis Kelamin',
-          hintText: 'Jenis Kelamin',
-          controller: jenKelController,
-        );
-      }
-
-      Widget profesiInput() {
-        return CustomTextFormField(
-          title: 'Profesi',
-          hintText: 'Input your profesi',
-          controller: profesiController,
+          // keyboardType: TextI,
         );
       }
 
       Widget passwordInput() {
-        return const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Input Your Password'),
-            SizedBox(
-              height: 14,
-            ),
-            PasswordField(),
-          ],
-        );
+        return PasswordField(controller: passwordController);
       }
 
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 18,
           bottom: 18,
         ),
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 20,
           vertical: 30,
         ),
@@ -151,8 +159,6 @@ class RegisterPage extends StatelessWidget {
             nameInput(),
             emailInput(),
             contactInput(),
-            jenKelInput(),
-            profesiInput(),
             passwordInput(),
           ],
         ),
@@ -183,22 +189,33 @@ class RegisterPage extends StatelessWidget {
     }
 
     Widget submitButton() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: 24,
-        ),
-        child: CustomButton(
-          title: 'Login',
-          width: 312,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ),
-            );
-          },
-        ),
+      return BlocConsumer<RegisterBloc, RegisterState>(
+        listener: (context, state) {
+          state.maybeWhen(
+            loaded: (response) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Registrasi berhasil!')),
+              );
+              context.goNamed(
+                RouteConstants.login,
+                pathParameters: PathParameters().toMap(),
+              );
+            },
+            error: (message) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(message)),
+              );
+            },
+            orElse: () {},
+          );
+        },
+        builder: (context, state) {
+          return CustomButton(
+            title: 'Sign up',
+            width: 312,
+            onPressed: () => _onSignUpPressed(context),
+          );
+        },
       );
     }
 

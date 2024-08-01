@@ -96,9 +96,9 @@ class ShippingDetailPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20.0),
         children: [
-          ProductTile(
-            data: orders.first,
-          ),
+          // ProductTile(
+          //   data: orders.first,
+          // ),
           const SpaceHeight(36.0),
           Container(
             decoration: BoxDecoration(

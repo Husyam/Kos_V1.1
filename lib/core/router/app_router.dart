@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/auth/pages/sign_in_page.dart';
-import 'package:kos_mobile_v2_testing/presentation/biodata/pages/biodata_page.dart';
+import 'package:kos_mobile_v2_testing/presentation/personalData/pages/address_page.dart';
 
 import '../../data/models/responses/product_response_mode.dart';
 import '../../presentation/auth/pages/login_page.dart';
 import '../../presentation/auth/pages/register_page.dart';
-import '../../presentation/biodata/models/address_model.dart';
-import '../../presentation/biodata/pages/edit_address_page.dart';
+
 import '../../presentation/home/pages/checkout_page.dart';
 import '../../presentation/home/pages/dashboard_page.dart';
 import '../../presentation/intro/splash_page.dart';
 import '../../presentation/home/pages/product_detail_page.dart';
+import '../../presentation/orders/pages/history_order_page.dart';
+import '../../presentation/orders/pages/payment_detail_page.dart';
+import '../../presentation/orders/pages/payment_waiting_page.dart';
+import '../../presentation/orders/pages/shipping_detail_page.dart';
+import '../../presentation/orders/pages/tracking_order_page.dart';
+import '../../presentation/personalData/models/address_model.dart';
 import '../../presentation/orders/pages/cart_page.dart';
 import '../../presentation/orders/pages/order_detail_page.dart';
+import '../../presentation/personalData/pages/add_address_page.dart';
 
 // import '../../presentation/address/models/address_model.dart';
 // import '../../presentation/address/pages/add_address_page.dart';
@@ -86,6 +92,11 @@ class AppRouter {
         },
         routes: [
           GoRoute(
+            name: RouteConstants.orderList,
+            path: RouteConstants.orderListPath,
+            builder: (context, state) => const HistoryOrderPage(),
+          ),
+          GoRoute(
             name: RouteConstants.cart,
             path: RouteConstants.cartPath,
             builder: (context, state) => const CartPage(),
@@ -94,6 +105,39 @@ class AppRouter {
                 name: RouteConstants.orderDetail,
                 path: RouteConstants.orderDetailPath,
                 builder: (context, state) => const OrderDetailPage(),
+                routes: [
+                  GoRoute(
+                    name: RouteConstants.paymentDetail,
+                    path: RouteConstants.paymentDetailPath,
+                    builder: (context, state) => const PaymentDetailPage(),
+                    routes: [
+                      GoRoute(
+                        name: RouteConstants.paymentWaiting,
+                        path: RouteConstants.paymentWaitingPath,
+                        builder: (context, state) {
+                          final args = state.extra as int;
+                          return PaymentWaitingPage(orderId: args);
+                        },
+                      ),
+                      GoRoute(
+                        name: RouteConstants.trackingOrder,
+                        path: RouteConstants.trackingOrderPath,
+                        builder: (context, state) {
+                          final args = state.extra as int;
+                          return TrackingOrderPage(orderId: args);
+                        },
+                        routes: [
+                          GoRoute(
+                            name: RouteConstants.shippingDetail,
+                            path: RouteConstants.shippingDetailPath,
+                            builder: (context, state) =>
+                                const ShippingDetailPage(),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
@@ -129,21 +173,21 @@ class AppRouter {
           GoRoute(
             name: RouteConstants.address,
             path: RouteConstants.addressPath,
-            builder: (context, state) => const BiodataPage(),
+            builder: (context, state) => const DataDiri(),
             routes: [
               GoRoute(
                 name: RouteConstants.addBiodataPage,
                 path: RouteConstants.addBiodataPath,
-                builder: (context, state) => CheckoutPage(),
+                builder: (context, state) => AddAddressPage(),
               ),
-              GoRoute(
-                name: RouteConstants.editBiodata,
-                path: RouteConstants.editBiodataPath,
-                builder: (context, state) {
-                  final args = state.extra as AddressModel;
-                  return EditBiodataPage(data: args);
-                },
-              ),
+              // GoRoute(
+              //   name: RouteConstants.editBiodata,
+              //   path: RouteConstants.editBiodataPath,
+              //   builder: (context, state) {
+              //     final args = state.extra as AddressModel;
+              //     return EditBiodataPage(data: args);
+              //   },
+              // ),
               // GoRoute(
               //   name: RouteConstants.orderDetail,
               //   path: RouteConstants.orderDetailPath,

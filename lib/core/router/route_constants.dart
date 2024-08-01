@@ -28,8 +28,8 @@ class RouteConstants {
   static const String productDetailPath = 'product_detail';
 
   // /// route for page [CheckoutPage]
-  // static const String checkoutPage = 'checkout';
-  // static const String checkoutPagePath = 'checkout';
+  static const String checkoutPage = 'checkout';
+  static const String checkoutPagePath = 'checkout';
 
   /// route for page [CartPage]
   static const String cart = 'cart';
