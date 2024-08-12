@@ -68,11 +68,15 @@ class AddAddressPage extends StatelessWidget {
               state.maybeWhen(
                 orElse: () {},
                 loaded: () {
+                  // context.goNamed(
+                  //   RouteConstants.address,
+                  //   pathParameters: PathParameters(
+                  //     rootTab: RootTab.cart,
+                  //   ).toMap(),
+                  // );
                   context.goNamed(
-                    RouteConstants.address,
-                    pathParameters: PathParameters(
-                      rootTab: RootTab.cart,
-                    ).toMap(),
+                    RouteConstants.cart,
+                    pathParameters: PathParameters().toMap(),
                   );
                 },
               );

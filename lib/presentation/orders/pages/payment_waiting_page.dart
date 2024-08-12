@@ -102,18 +102,20 @@ class _PaymentWaitingPageState extends State<PaymentWaitingPage> {
               const SpaceHeight(50.0),
               Row(
                 children: [
-                  Flexible(
-                    child: Button.outlined(
-                      onPressed: () {
-                        context.pushNamed(
-                          RouteConstants.trackingOrder,
-                          pathParameters: PathParameters().toMap(),
-                        );
-                      },
-                      label: 'Lacak Pesanan',
-                    ),
-                  ),
-                  const SpaceWidth(20.0),
+                  // Flexible(
+                  //   child: Button.outlined(
+                  //     onPressed: () {
+                  //       context.pushNamed(
+                  //         RouteConstants.trackingOrder,
+                  //         pathParameters: PathParameters().toMap(),
+                  //         // extra: to string, to pass the order id
+                  //         // extra: widget.orderId.toString()
+                  //       );
+                  //     },
+                  //     label: 'Lacak Pesanan',
+                  //   ),
+                  // ),
+                  // const SpaceWidth(20.0),
                   Flexible(
                     child: Button.filled(
                       onPressed: () {
@@ -221,71 +223,93 @@ class _PaymentWaitingPageState extends State<PaymentWaitingPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'No Virtual Account',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    BlocBuilder<OrderBloc, OrderState>(
-                      builder: (context, state) {
-                        return state.maybeWhen(
-                          orElse: () {
-                            return const SizedBox.shrink();
-                          },
-                          loaded: (orderResponseModel) {
-                            return Text(
-                              orderResponseModel.order!.paymentVaNumber!,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            );
-                          },
+                BlocBuilder<OrderBloc, OrderState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      orElse: () {
+                        return const SizedBox.shrink();
+                      },
+                      loaded: (orderResponseModel) {
+                        String vaNumber =
+                            orderResponseModel.order!.paymentVaNumber ??
+                                'No VA Number';
+
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'No Virtual Account',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                Text(
+                                  vaNumber,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Padding(padding: EdgeInsets.all(24.0)),
+                            Button.outlined(
+                              textColor: AppColors.primary,
+                              width: 125.0,
+                              onPressed: () {
+                                Clipboard.setData(ClipboardData(text: vaNumber))
+                                    .then((_) {
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                    content: const Text('Copied to clipboard'),
+                                    duration: const Duration(seconds: 1),
+                                    backgroundColor: AppColors.primary,
+                                  ));
+                                });
+                              },
+                              label: 'Copy',
+                              icon: Assets.icons.copy.svg(),
+                            ),
+                          ],
                         );
                       },
-                    ),
-                  ],
-                ),
-                Button.outlined(
-                  textColor: AppColors.primary,
-                  width: 125.0,
-                  onPressed: () {
-                    Clipboard.setData(const ClipboardData(text: 'test dong'))
-                        .then((_) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Copied to clipboard'),
-                        duration: Duration(seconds: 1),
-                        backgroundColor: AppColors.primary,
-                      ));
-                    });
+                    );
                   },
-                  label: 'Copy',
-                  icon: Assets.icons.copy.svg(),
                 ),
               ],
             ),
             const SpaceHeight(14.0),
-            const ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(
-                'Total Pembayaran',
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              subtitle: Text(
-                'IDR 377.000',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+            BlocBuilder<OrderBloc, OrderState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () {
+                    return const SizedBox.shrink();
+                  },
+                  loaded: (orderResponseModel) {
+                    return ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'Total Pembayaran',
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'IDR ${orderResponseModel.order!.totalCost!.currencyFormatRp}',
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
           ],
         ),

@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "kos_mobile_v2_testing",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "kos_mobile_v2_testing (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "kos_mobile_v2_testing (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

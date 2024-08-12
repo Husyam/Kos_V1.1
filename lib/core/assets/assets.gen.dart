@@ -10,6 +10,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:kos_mobile_v2_testing/core/core.dart';
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
@@ -119,11 +121,48 @@ class $AssetsImagesGen {
   AssetGenImage get processOrder =>
       const AssetGenImage('assets/images/process-order.png');
 
+  // ['AC', 'Wifi', 'Kulkas', 'TV', 'Kamar Mandi', smoking area] with assets/images/fasilitas
+
+  AssetGenImage get iconAc =>
+      const AssetGenImage('assets/images/fasilitas/icons8-ac-96.png');
+
+  //wifi
+  AssetGenImage get wifi =>
+      const AssetGenImage('assets/images/fasilitas/icons8-wifi-96.png');
+
+  AssetGenImage get refrigerator =>
+      const AssetGenImage('assets/images/fasilitas/icons8-refrigerator-96.png');
+
+  AssetGenImage get bedroom =>
+      const AssetGenImage('assets/images/fasilitas/icons8-bedroom-64.png');
+
+  AssetGenImage get smokingArea =>
+      const AssetGenImage('assets/images/fasilitas/icons8-smoking-64.png');
+
+  AssetGenImage get tv =>
+      const AssetGenImage('assets/images/fasilitas/icons8-television-100.png');
+
+  //toilet
+  AssetGenImage get toilet =>
+      const AssetGenImage('assets/images/fasilitas/icons8-toilet-96.png');
+
   $AssetsImagesProductsGen get products => const $AssetsImagesProductsGen();
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [banner1, banner2, google, oops, processOrder];
+  List<AssetGenImage> get values => [
+        banner1,
+        banner2,
+        google,
+        oops,
+        processOrder,
+        iconAc,
+        bedroom,
+        refrigerator,
+        smokingArea,
+        tv,
+        toilet,
+        wifi
+      ];
 }
 
 class $AssetsImagesBanksGen {

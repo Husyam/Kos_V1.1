@@ -1,7 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-
-import 'package:flutter/foundation.dart';
 
 class ProductResponseModel {
   final String? status;
@@ -102,13 +99,12 @@ class Data {
         "to": to,
         "total": total,
       };
-
-  where(Function(dynamic product) param0) {}
 }
 
 class Product {
   final int? id;
   final int? categoryId;
+  final int? userId;
   final String? name;
   final String? nameOwner;
   final String? categoryGender;
@@ -117,16 +113,19 @@ class Product {
   final String? description;
   final int? stock;
   final String? address;
-  final String? longitude;
   final String? latitude;
+  final String? longitude;
   final String? image;
+  final List<String>? multiImage;
   final int? isAvailable;
+  final List<String>? fasilitas;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
   Product({
     this.id,
     this.categoryId,
+    this.userId,
     this.name,
     this.nameOwner,
     this.categoryGender,
@@ -135,10 +134,12 @@ class Product {
     this.description,
     this.stock,
     this.address,
-    this.longitude,
     this.latitude,
+    this.longitude,
     this.image,
+    this.multiImage,
     this.isAvailable,
+    this.fasilitas,
     this.createdAt,
     this.updatedAt,
   });
@@ -150,6 +151,7 @@ class Product {
   factory Product.fromMap(Map<String, dynamic> json) => Product(
         id: json["id"],
         categoryId: json["category_id"],
+        userId: json["user_id"],
         name: json["name"],
         nameOwner: json["name_owner"],
         categoryGender: json["category_gender"],
@@ -158,10 +160,16 @@ class Product {
         description: json["description"],
         stock: json["stock"],
         address: json["address"],
-        longitude: json["longitude"],
         latitude: json["latitude"],
+        longitude: json["longitude"],
         image: json["image"],
+        multiImage: json["multi_image"] == null
+            ? []
+            : List<String>.from(json["multi_image"]!.map((x) => x)),
         isAvailable: json["is_available"],
+        fasilitas: json["fasilitas"] == null
+            ? []
+            : List<String>.from(json["fasilitas"]!.map((x) => x)),
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"]),
@@ -173,6 +181,7 @@ class Product {
   Map<String, dynamic> toMap() => {
         "id": id,
         "category_id": categoryId,
+        "user_id": userId,
         "name": name,
         "name_owner": nameOwner,
         "category_gender": categoryGender,
@@ -181,55 +190,19 @@ class Product {
         "description": description,
         "stock": stock,
         "address": address,
-        "longitude": longitude,
         "latitude": latitude,
+        "longitude": longitude,
         "image": image,
+        "multi_image": multiImage == null
+            ? []
+            : List<dynamic>.from(multiImage!.map((x) => x)),
         "is_available": isAvailable,
+        "fasilitas": fasilitas == null
+            ? []
+            : List<dynamic>.from(fasilitas!.map((x) => x)),
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),
       };
-
-  @override
-  bool operator ==(covariant Product other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.categoryId == categoryId &&
-        other.name == name &&
-        other.nameOwner == nameOwner &&
-        other.categoryGender == categoryGender &&
-        other.noKontak == noKontak &&
-        other.price == price &&
-        other.description == description &&
-        other.stock == stock &&
-        other.address == address &&
-        other.longitude == longitude &&
-        other.latitude == latitude &&
-        other.image == image &&
-        other.isAvailable == isAvailable &&
-        other.createdAt == createdAt &&
-        other.updatedAt == updatedAt;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        categoryId.hashCode ^
-        name.hashCode ^
-        nameOwner.hashCode ^
-        categoryGender.hashCode ^
-        noKontak.hashCode ^
-        price.hashCode ^
-        description.hashCode ^
-        stock.hashCode ^
-        address.hashCode ^
-        longitude.hashCode ^
-        latitude.hashCode ^
-        image.hashCode ^
-        isAvailable.hashCode ^
-        createdAt.hashCode ^
-        updatedAt.hashCode;
-  }
 }
 
 class Link {

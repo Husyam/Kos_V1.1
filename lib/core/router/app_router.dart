@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/auth/pages/sign_in_page.dart';
-import 'package:kos_mobile_v2_testing/presentation/personalData/pages/address_page.dart';
+import 'package:kos_mobile_v2_testing/presentation/personalData/pages/biodata_page.dart';
 
 import '../../data/models/responses/product_response_mode.dart';
 import '../../presentation/auth/pages/login_page.dart';
@@ -19,7 +19,7 @@ import '../../presentation/orders/pages/tracking_order_page.dart';
 import '../../presentation/personalData/models/address_model.dart';
 import '../../presentation/orders/pages/cart_page.dart';
 import '../../presentation/orders/pages/order_detail_page.dart';
-import '../../presentation/personalData/pages/add_address_page.dart';
+import '../../presentation/personalData/pages/add_biodata_page.dart';
 
 // import '../../presentation/address/models/address_model.dart';
 // import '../../presentation/address/pages/add_address_page.dart';
@@ -125,15 +125,16 @@ class AppRouter {
                         builder: (context, state) {
                           final args = state.extra as int;
                           return TrackingOrderPage(orderId: args);
+                          // return TrackingOrderPage(orderId: args);
                         },
-                        routes: [
-                          GoRoute(
-                            name: RouteConstants.shippingDetail,
-                            path: RouteConstants.shippingDetailPath,
-                            builder: (context, state) =>
-                                const ShippingDetailPage(),
-                          ),
-                        ],
+                        // routes: [
+                        //   GoRoute(
+                        //     name: RouteConstants.shippingDetail,
+                        //     path: RouteConstants.shippingDetailPath,
+                        //     builder: (context, state) =>
+                        //         const ShippingDetailPage(),
+                        //   ),
+                        // ],
                       ),
                     ],
                   ),
@@ -224,167 +225,6 @@ class AppRouter {
           ),
         ],
       ),
-      //   // routes: [
-      //   //   GoRoute(
-      //   //     name: RouteConstants.orderList,
-      //   //     path: RouteConstants.orderListPath,
-      //   //     builder: (context, state) => const HistoryOrderPage(),
-      //   //   ),
-      //   //   // GoRoute(
-      //   //   //   name: RouteConstants.cart,
-      //   //   //   path: RouteConstants.cartPath,
-      //   //   //   builder: (context, state) => const CartPage(),
-      //   //   //   routes: [
-      //   //   //     GoRoute(
-      //   //   //       name: RouteConstants.orderDetail,
-      //   //   //       path: RouteConstants.orderDetailPath,
-      //   //   //       builder: (context, state) => const OrderDetailPage(),
-      //   //   //       routes: [
-      //   //   //         GoRoute(
-      //   //   //           name: RouteConstants.paymentDetail,
-      //   //   //           path: RouteConstants.paymentDetailPath,
-      //   //   //           builder: (context, state) => const PaymentDetailPage(),
-      //   //   //           routes: [
-      //   //   //             GoRoute(
-      //   //   //               name: RouteConstants.paymentWaiting,
-      //   //   //               path: RouteConstants.paymentWaitingPath,
-      //   //   //               builder: (context, state) {
-      //   //   //                 final args = state.extra as int;
-      //   //   //                 return PaymentWaitingPage(orderId: args);
-      //   //   //               },
-      //   //   //             ),
-      //   //   //             GoRoute(
-      //   //   //               name: RouteConstants.trackingOrder,
-      //   //   //               path: RouteConstants.trackingOrderPath,
-      //   //   //               builder: (context, state) {
-      //   //   //                 final args = state.extra as int;
-      //   //   //                 return TrackingOrderPage(orderId: args);
-      //   //   //               },
-      //   //   //               routes: [
-      //   //   //                 GoRoute(
-      //   //   //                   name: RouteConstants.shippingDetail,
-      //   //   //                   path: RouteConstants.shippingDetailPath,
-      //   //   //                   builder: (context, state) {
-      //   //   //                     final args = state.extra as String;
-      //   //   //                     return ShippingDetailPage(resi: args);
-      //   //   //                   },
-      //   //   //                 ),
-      //   //   //               ],
-      //   //   //             ),
-      //   //   //           ],
-      //   //   //         ),
-      //   //   //       ],
-
-      //   //   //       // routes: [
-      //   //   //       //   GoRoute(
-      //   //   //       //     name: RouteConstants.paymentDetail,
-      //   //   //       //     path: RouteConstants.paymentDetailPath,
-      //   //   //       //     builder: (context, state) => const PaymentDetailPage(),
-      //   //   //       //     routes: [
-      //   //   //       //       GoRoute(
-      //   //   //       //         name: RouteConstants.trackingOrder,
-      //   //   //       //         path: RouteConstants.trackingOrderPath,
-      //   //   //       //         builder: (context, state) => const TrackingOrderPage(),
-      //   //   //       //         routes: [
-      //   //   //       //           GoRoute(
-      //   //   //       //             name: RouteConstants.shippingDetail,
-      //   //   //       //             path: RouteConstants.shippingDetailPath,
-      //   //   //       //             builder: (context, state) =>
-      //   //   //       //                 const ShippingDetailPage(),
-      //   //   //       //           ),
-      //   //   //       //         ],
-      //   //   //       //       ),
-      //   //   //       //     ],
-      //   //   //       //   ),
-      //   //   //       // ],
-      //   //   //     ),
-      //   //   //   ],
-      //   //   // ),
-      //   //   // GoRoute(
-      //   //   //   name: RouteConstants.address,
-      //   //   //   path: RouteConstants.addressPath,
-      //   //   //   builder: (context, state) => const AddressPage(),
-      //   //   //   routes: [
-      //   //   //     GoRoute(
-      //   //   //       name: RouteConstants.addAddress,
-      //   //   //       path: RouteConstants.addAddressPath,
-      //   //   //       builder: (context, state) => const AddAddressPage(),
-      //   //   //     ),
-      //   //   //     GoRoute(
-      //   //   //       name: RouteConstants.editAddress,
-      //   //   //       path: RouteConstants.editAddressPath,
-      //   //   //       builder: (context, state) {
-      //   //   //         final args = state.extra as AddressModel;
-      //   //   //         return EditAddressPage(data: args);
-      //   //   //       },
-      //   //   //     ),
-      //   //   //   ],
-      //   //   // ),
-      //   // ],
-      // ),
-      //   routes: [
-      //     GoRoute(
-      //       name: RouteConstants.productDetail,
-      //       path: RouteConstants.productDetailPath,
-      //       builder: (context, state) {
-      //         final args = state.extra as ProductModel;
-      //         return ProductDetailPage(data: args);
-      //       },
-      //     ),
-      //     GoRoute(
-      //       name: RouteConstants.cart,
-      //       path: RouteConstants.cartPath,
-      //       builder: (context, state) => const CartPage(),
-      //     ),
-      //     GoRoute(
-      //       name: RouteConstants.address,
-      //       path: RouteConstants.addressPath,
-      //       builder: (context, state) => const AddressPage(),
-      //       routes: [
-      //         GoRoute(
-      //           name: RouteConstants.addAddress,
-      //           path: RouteConstants.addAddressPath,
-      //           builder: (context, state) => const AddAddressPage(),
-      //         ),
-      //         GoRoute(
-      //           name: RouteConstants.editAddress,
-      //           path: RouteConstants.editAddressPath,
-      //           builder: (context, state) {
-      //             final args = state.extra as AddressModel;
-      //             return EditAddressPage(data: args);
-      //           },
-      //         ),
-      //         GoRoute(
-      //           name: RouteConstants.orderDetail,
-      //           path: RouteConstants.orderDetailPath,
-      //           builder: (context, state) => const OrderDetailPage(),
-      //           routes: [
-      //             GoRoute(
-      //               name: RouteConstants.paymentDetail,
-      //               path: RouteConstants.paymentDetailPath,
-      //               builder: (context, state) => const PaymentDetailPage(),
-      //               routes: [
-      //                 GoRoute(
-      //                   name: RouteConstants.trackingOrder,
-      //                   path: RouteConstants.trackingOrderPath,
-      //                   builder: (context, state) => const TrackingOrderPage(),
-      //                   routes: [
-      //                     GoRoute(
-      //                       name: RouteConstants.shippingDetail,
-      //                       path: RouteConstants.shippingDetailPath,
-      //                       builder: (context, state) =>
-      //                           const ShippingDetailPage(),
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ],
-      //             ),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
     ],
     errorPageBuilder: (context, state) {
       return MaterialPage(

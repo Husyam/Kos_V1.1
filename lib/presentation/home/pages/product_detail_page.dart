@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kos_mobile_v2_testing/core/extensions/int_ext.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/assets/assets.gen.dart';
 import '../../../core/router/app_router.dart';
 import '../../../data/datasources/auth_local_datasource.dart';
 import '../../../data/models/responses/product_response_mode.dart';
@@ -22,6 +24,28 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
+  final fasilitas = {
+    // ['AC', 'Wifi', 'Kulkas', 'TV', 'Kamar Mandi', smoking area]
+    'AC': 'assets/images/fasilitas/icons8-ac-96.png',
+    'Wifi': 'assets/images/fasilitas/icons8-wifi-96.png',
+    'Kulkas': 'assets/images/fasilitas/icons8-refrigerator-96.png',
+    'TV': 'assets/images/fasilitas/icons8-television-100.png',
+    'Kamar Mandi': 'assets/images/fasilitas/icons8-toilet-96.png',
+    'Smoking Area': 'assets/images/fasilitas/icons8-smoking-64.png',
+
+    //get Aset Gen Image
+  };
+
+  // final List<String> fasilitas = [
+  //   Assets.images.iconAc.path,
+  //   Assets.images.wifi.path,
+  //   Assets.images.refrigerator.path,
+  //   Assets.images.bedroom.path,
+  //   Assets.images.smokingArea.path,
+  //   Assets.images.tv.path,
+  //   Assets.images.toilet.path,
+  // ];
+
   bool isFavorite = false;
 
   Future<void> _checkFavoriteStatus() async {
@@ -100,8 +124,15 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 bool innerBoxIsScrolled,
               ) {
                 return <Widget>[
-                  const SliverToBoxAdapter(
-                    child: CarouselSliderWithDots(),
+                  SliverToBoxAdapter(
+                    child: widget.data.multiImage != null &&
+                            widget.data.multiImage!.isNotEmpty
+                        ? CarouselSliderWithDots(
+                            items: widget.data.multiImage ?? [],
+                          )
+                        : const Center(
+                            child: Text('No images available'),
+                          ),
                   ),
                 ];
               },
@@ -215,23 +246,20 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              FacilityItem(
-                                name: 'kitchen',
-                                imageUrl:
-                                    'assets/images/icons8-bedroom-64 1.png',
-                                total: 11,
-                              ),
-                              FacilityItem(
-                                name: 'bedroom',
-                                imageUrl:
-                                    'assets/images/icons8-toilet-96 1.png',
-                                total: 11,
-                              ),
-                              FacilityItem(
-                                name: 'Big Lemari',
-                                imageUrl: 'assets/images/icons8-width-40 1.png',
-                                total: 11,
-                              ),
+                              widget.data.fasilitas!.isEmpty
+                                  ? const Text('Tidak Ada Fasilitas')
+                                  : Row(
+                                      children: widget.data.fasilitas!
+                                          .map(
+                                            (facility) => FacilityItem(
+                                              name: facility,
+                                              imageUrl: fasilitas[facility] ??
+                                                  'assets/images/fasilitas/icons8-error-80.png',
+                                              //total: 0,
+                                            ),
+                                          )
+                                          .toList(),
+                                    ),
                             ],
                           ),
                         ),
@@ -288,7 +316,32 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24, // ubah defaultMargin
                           ),
-                          child: Image.asset('assets/images/maps dumy.png'),
+                          child: Container(
+                            height: 200,
+                            width: double.infinity,
+                            child: GoogleMap(
+                              initialCameraPosition: CameraPosition(
+                                target: LatLng(
+                                  double.parse(widget.data
+                                      .latitude!), // latitude from API data
+                                  double.parse(widget.data
+                                      .longitude!), // longitude from API data
+                                ),
+                                zoom: 15,
+                              ),
+                              markers: {
+                                Marker(
+                                  markerId: MarkerId('product_location'),
+                                  position: LatLng(
+                                    double.parse(widget.data
+                                        .latitude!), // latitude from API data
+                                    double.parse(widget.data
+                                        .longitude!), // longitude from API data
+                                  ),
+                                ),
+                              },
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 18,

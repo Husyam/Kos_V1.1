@@ -53,7 +53,7 @@ class _MapsPageState extends State<MapsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Maps Sample App'),
+        title: const Text('Lokasi Kos'),
         backgroundColor: bgColor,
       ),
       body: GoogleMap(

@@ -73,6 +73,18 @@ class OrderCard extends StatelessWidget {
               label: 'Total Harga',
               value: data.totalCost?.currencyFormatRp ?? '-',
             ),
+            const SpaceHeight(12.0),
+            //date
+            RowText(
+              label: 'Tanggal Pesanan',
+              value: data.createdAt?.toString() ?? '-',
+            ),
+            const SpaceHeight(12.0),
+            //payment va name
+            RowText(
+              label: 'Nama VA',
+              value: data.paymentVaName ?? '-',
+            ),
           ],
         ),
       ),

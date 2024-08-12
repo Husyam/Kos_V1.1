@@ -3,16 +3,12 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CarouselSliderWithDots extends StatefulWidget {
+  final List<String> items;
+
   const CarouselSliderWithDots({
     super.key,
-    this.items = const [
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1523192193543-6e7296d960e4?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    ],
+    this.items = const [],
   });
-
-  final List<String> items;
 
   @override
   State<CarouselSliderWithDots> createState() => _CarouselSliderWithDotsState();
@@ -50,7 +46,6 @@ class _CarouselSliderWithDotsState extends State<CarouselSliderWithDots> {
             viewportFraction: 1,
             autoPlayAnimationDuration: const Duration(milliseconds: 300),
             autoPlay: true,
-            //enlargeCenterPage: true,
             onPageChanged: (index, reason) {
               setState(() {
                 currentIndex = index;
