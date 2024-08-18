@@ -4,6 +4,7 @@ import 'package:kos_mobile_v2_testing/presentation/auth/pages/sign_in_page.dart'
 import 'package:kos_mobile_v2_testing/presentation/personalData/pages/biodata_page.dart';
 
 import '../../data/models/responses/product_response_mode.dart';
+import '../../presentation/account/pages/edit_profile.dart';
 import '../../presentation/auth/pages/login_page.dart';
 import '../../presentation/auth/pages/register_page.dart';
 
@@ -222,6 +223,11 @@ class AppRouter {
               //   ],
               // ),
             ],
+          ),
+          GoRoute(
+            name: RouteConstants.editProfile,
+            path: RouteConstants.editProfilePath,
+            builder: (context, state) => const EditProfile(),
           ),
         ],
       ),

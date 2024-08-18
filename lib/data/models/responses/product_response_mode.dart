@@ -102,7 +102,7 @@ class Data {
 }
 
 class Product {
-  final int? id;
+  final int? idProduct;
   final int? categoryId;
   final int? userId;
   final String? name;
@@ -123,7 +123,7 @@ class Product {
   final DateTime? updatedAt;
 
   Product({
-    this.id,
+    this.idProduct,
     this.categoryId,
     this.userId,
     this.name,
@@ -149,7 +149,7 @@ class Product {
   String toJson() => json.encode(toMap());
 
   factory Product.fromMap(Map<String, dynamic> json) => Product(
-        id: json["id"],
+        idProduct: json["id_product"],
         categoryId: json["category_id"],
         userId: json["user_id"],
         name: json["name"],
@@ -179,7 +179,7 @@ class Product {
       );
 
   Map<String, dynamic> toMap() => {
-        "id": id,
+        "id_product": idProduct,
         "category_id": categoryId,
         "user_id": userId,
         "name": name,

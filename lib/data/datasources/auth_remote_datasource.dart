@@ -69,7 +69,7 @@ class AuthRemoteDatasource {
 
       if (response.statusCode == 200) {
         final authResponseModel = AuthResponseModel.fromJson(response.body);
-        final userId = authResponseModel.user?.id;
+        final userId = authResponseModel.user?.idUser;
         if (userId != null) {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setInt('userId', userId);
@@ -105,7 +105,7 @@ class AuthRemoteDatasource {
 
       if (response.statusCode == 200) {
         final authResponseModel = AuthResponseModel.fromJson(response.body);
-        final userId = authResponseModel.user?.id;
+        final userId = authResponseModel.user?.idUser;
         if (userId != null) {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setInt('userId', userId);

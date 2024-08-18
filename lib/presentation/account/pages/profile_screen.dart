@@ -139,7 +139,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.goNamed(
+                                    RouteConstants.editProfile,
+                                    pathParameters: PathParameters().toMap(),
+                                  );
+                                },
                               ),
                             ],
                           ),

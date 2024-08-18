@@ -97,12 +97,13 @@ class _AddressPageState extends State<DataDiri> {
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: personalData.length,
                         itemBuilder: (context, index) => AddressTile(
-                          isSelected: personalDataId == personalData[index].id,
+                          isSelected: personalDataId ==
+                              personalData[index].idPersonalData,
                           data: personalData[index],
                           onTap: () {
                             context.read<CheckoutBloc>().add(
                                   CheckoutEvent.addPersonalDataId(
-                                      personalData[index].id!),
+                                      personalData[index].idPersonalData!),
                                 );
                           },
                           onEditTap: () {

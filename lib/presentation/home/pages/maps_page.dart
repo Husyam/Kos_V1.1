@@ -30,7 +30,7 @@ class _MapsPageState extends State<MapsPage> {
           final lng = double.parse(product.longitude!);
           markers.add(
             Marker(
-              markerId: MarkerId(product.id.toString()),
+              markerId: MarkerId(product.idProduct.toString()),
               position: LatLng(lat, lng),
               infoWindow: InfoWindow(
                 title: product.name,

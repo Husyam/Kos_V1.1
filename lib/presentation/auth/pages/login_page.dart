@@ -9,7 +9,6 @@ import '../../../core/core.dart';
 import '../../../core/router/app_router.dart';
 import '../../../data/datasources/auth_local_datasource.dart';
 import '../../../data/datasources/firebase_messaging_remote_datasouce.dart';
-import '../../home/pages/dashboard_page.dart';
 import '../bloc/login/login_bloc.dart';
 
 class LoginPage extends StatefulWidget {
@@ -94,8 +93,8 @@ class _LoginPageState extends State<LoginPage> {
                 loaded: (data) async {
                   AuthLocalDatasource().saveAuthData(data);
                   await FirebaseMessagingRemoteDatasource().initialize();
-                  int userId =
-                      data.user?.id ?? 0; // Mengakses userId dari objek User
+                  int userId = data.user?.idUser ??
+                      0; // Mengakses userId dari objek User
                   onLoginSuccess(userId);
                 },
                 error: (message) {

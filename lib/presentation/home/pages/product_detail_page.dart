@@ -52,7 +52,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     AuthLocalDatasource localDatasource = AuthLocalDatasource();
     List<Product> favorites = await localDatasource.getFavorites();
     setState(() {
-      isFavorite = favorites.any((product) => product.id == widget.data.id);
+      isFavorite = favorites
+          .any((product) => product.idProduct == widget.data.idProduct);
     });
   }
 

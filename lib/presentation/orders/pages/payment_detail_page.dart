@@ -377,7 +377,7 @@ class PaymentDetailPage extends StatelessWidget {
                       context.pushNamed(
                         RouteConstants.paymentWaiting,
                         pathParameters: PathParameters().toMap(),
-                        extra: orderResponseModel.order!.id,
+                        extra: orderResponseModel.order!.idOrder,
                       );
                     },
                     error: (message) {

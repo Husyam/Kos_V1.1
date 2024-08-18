@@ -84,6 +84,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/banner2.png
   AssetGenImage get banner2 => const AssetGenImage('assets/images/banner2.png');
 
+  /// File path: assets/images/banner21.jpeg
+  AssetGenImage get banner21 =>
+      const AssetGenImage('assets/images/banner21.jpeg');
+
   /// File path: assets/images/btn_back.png
   AssetGenImage get btnBack =>
       const AssetGenImage('assets/images/btn_back.png');
@@ -100,24 +104,15 @@ class $AssetsImagesGen {
   $AssetsImagesCategoriesGen get categories =>
       const $AssetsImagesCategoriesGen();
 
+  /// Directory path: assets/images/fasilitas
+  $AssetsImagesFasilitasGen get fasilitas => const $AssetsImagesFasilitasGen();
+
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
   /// File path: assets/images/history_icons.png
   AssetGenImage get historyIcons =>
       const AssetGenImage('assets/images/history_icons.png');
-
-  /// File path: assets/images/icons8-bedroom-64 1.png
-  AssetGenImage get icons8Bedroom641 =>
-      const AssetGenImage('assets/images/icons8-bedroom-64 1.png');
-
-  /// File path: assets/images/icons8-toilet-96 1.png
-  AssetGenImage get icons8Toilet961 =>
-      const AssetGenImage('assets/images/icons8-toilet-96 1.png');
-
-  /// File path: assets/images/icons8-width-40 1.png
-  AssetGenImage get icons8Width401 =>
-      const AssetGenImage('assets/images/icons8-width-40 1.png');
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
@@ -147,14 +142,12 @@ class $AssetsImagesGen {
         profile,
         banner1,
         banner2,
+        banner21,
         btnBack,
         btnWishlist,
         callIcons,
         google,
         historyIcons,
-        icons8Bedroom641,
-        icons8Toilet961,
-        icons8Width401,
         logo,
         mapsDumy,
         oops,
@@ -202,6 +195,54 @@ class $AssetsImagesCategoriesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [bidar, uigm, uin, unsri];
+}
+
+class $AssetsImagesFasilitasGen {
+  const $AssetsImagesFasilitasGen();
+
+  /// File path: assets/images/fasilitas/icons8-ac-96.png
+  AssetGenImage get icons8Ac96 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-ac-96.png');
+
+  /// File path: assets/images/fasilitas/icons8-bedroom-64.png
+  AssetGenImage get icons8Bedroom64 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-bedroom-64.png');
+
+  /// File path: assets/images/fasilitas/icons8-error-80.png
+  AssetGenImage get icons8Error80 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-error-80.png');
+
+  /// File path: assets/images/fasilitas/icons8-refrigerator-96.png
+  AssetGenImage get icons8Refrigerator96 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-refrigerator-96.png');
+
+  /// File path: assets/images/fasilitas/icons8-smoking-64.png
+  AssetGenImage get icons8Smoking64 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-smoking-64.png');
+
+  /// File path: assets/images/fasilitas/icons8-television-100.png
+  AssetGenImage get icons8Television100 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-television-100.png');
+
+  /// File path: assets/images/fasilitas/icons8-toilet-96.png
+  AssetGenImage get icons8Toilet96 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-toilet-96.png');
+
+  /// File path: assets/images/fasilitas/icons8-wifi-96.png
+  AssetGenImage get icons8Wifi96 =>
+      const AssetGenImage('assets/images/fasilitas/icons8-wifi-96.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        icons8Ac96,
+        icons8Bedroom64,
+        icons8Error80,
+        icons8Refrigerator96,
+        icons8Smoking64,
+        icons8Television100,
+        icons8Toilet96,
+        icons8Wifi96
+      ];
 }
 
 class $AssetsImagesProductsGen {

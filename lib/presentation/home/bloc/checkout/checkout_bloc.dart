@@ -14,10 +14,10 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     on<_AddItem>((event, emit) {
       final currentState = state as _Loaded;
 
-      if (currentState.products
-          .any((element) => element.product.id == event.product.id)) {
-        final index = currentState.products
-            .indexWhere((element) => element.product.id == event.product.id);
+      if (currentState.products.any(
+          (element) => element.product.idProduct == event.product.idProduct)) {
+        final index = currentState.products.indexWhere(
+            (element) => element.product.idProduct == event.product.idProduct);
         final item = currentState.products[index];
         final newItem = item.copyWith(quantity: item.quantity + 1);
         final newItems =
@@ -34,15 +34,16 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
       (event, emit) {
         final currentState = state as _Loaded;
 
-        if (currentState.products
-            .any((element) => element.product.id == event.product.id)) {
-          final index = currentState.products
-              .indexWhere((element) => element.product.id == event.product.id);
+        if (currentState.products.any((element) =>
+            element.product.idProduct == event.product.idProduct)) {
+          final index = currentState.products.indexWhere((element) =>
+              element.product.idProduct == event.product.idProduct);
           final item = currentState.products[index];
           // if quantity is 1, remove the item
           if (item.quantity == 1) {
             final newItems = currentState.products
-                .where((element) => element.product.id != event.product.id)
+                .where((element) =>
+                    element.product.idProduct != event.product.idProduct)
                 .toList();
             emit(_Loaded(newItems, currentState.personalDataId,
                 currentState.paymentMethod, ''));

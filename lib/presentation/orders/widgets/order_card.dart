@@ -18,11 +18,11 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (data.id != null) {
+        if (data.idOrder != null) {
           context.pushNamed(
             RouteConstants.trackingOrder,
             pathParameters: PathParameters().toMap(),
-            extra: data.id,
+            extra: data.idOrder,
           );
         } else {
           // Tangani kasus id null jika diperlukan
@@ -84,6 +84,12 @@ class OrderCard extends StatelessWidget {
             RowText(
               label: 'Nama VA',
               value: data.paymentVaName ?? '-',
+            ),
+            const SpaceHeight(12.0),
+            //payment va number
+            RowText(
+              label: 'Nomor Virtual Account',
+              value: data.paymentVaNumber ?? '-',
             ),
           ],
         ),

@@ -51,6 +51,10 @@ class RouteConstants {
   static const String editBiodata = 'edit-biodata';
   static const String editBiodataPath = 'edit-biodata';
 
+  /// route for page [EditProfile]
+  static const String editProfile = 'edit_profile';
+  static const String editProfilePath = 'edit_profile';
+
   /// route for page [OrderDetailPage]
   static const String orderDetail = 'order_detail';
   static const String orderDetailPath = 'order_detail';

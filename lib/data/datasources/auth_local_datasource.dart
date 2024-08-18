@@ -81,7 +81,8 @@ class AuthLocalDatasource {
     List<String> favorites = prefs.getStringList(_keyFavorites) ?? [];
 
     // Remove the product JSON string from the list
-    favorites.removeWhere((item) => Product.fromJson(item).id == product.id);
+    favorites.removeWhere(
+        (item) => Product.fromJson(item).idProduct == product.idProduct);
 
     // Save the updated list to SharedPreferences
     await prefs.setStringList(_keyFavorites, favorites);

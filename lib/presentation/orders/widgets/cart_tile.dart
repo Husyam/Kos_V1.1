@@ -7,7 +7,6 @@ import 'package:kos_mobile_v2_testing/presentation/home/models/product_quantity.
 import '../../../core/components/spaces.dart';
 import '../../../core/core.dart';
 import '../../home/bloc/checkout/checkout_bloc.dart';
-import '../models/cart_model.dart';
 
 class CartTile extends StatelessWidget {
   final ProductQuantity data;

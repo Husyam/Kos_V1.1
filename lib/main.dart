@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kos_mobile_v2_testing/core/router/app_router.dart';
+import 'package:kos_mobile_v2_testing/data/datasources/auth_edit_profile_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/auth_local_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/auth_remote_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/category_remote_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/firebase_messaging_remote_datasouce.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/personal_remote_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/product_remote_datasource.dart';
+import 'package:kos_mobile_v2_testing/presentation/account/bloc/edit_profile/edit_profile_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/account/bloc/get_profile/get_profile_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/auth/bloc/login/login_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/auth/bloc/logout/logout_bloc.dart';
@@ -90,6 +92,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetProfileBloc(AuthRemoteDatasource()),
+        ),
+        //edit_profile_bloc
+        BlocProvider(
+          create: (context) => EditProfileBloc(AuthEditProfileDatasource()),
         ),
       ],
       child: MaterialApp.router(

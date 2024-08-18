@@ -28,7 +28,8 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
         subTotal: 0,
         totalCost: 0,
         items: event.products
-            .map((e) => Item(productId: e.product.id!, quantity: e.quantity))
+            .map((e) =>
+                Item(productId: e.product.idProduct!, quantity: e.quantity))
             .toList(),
       );
       final response = await orderRemoteDatasource.order(orderRequestData);
