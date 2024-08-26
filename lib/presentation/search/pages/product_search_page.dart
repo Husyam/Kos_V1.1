@@ -48,6 +48,11 @@ class _SearchPageState extends State<SearchPage> {
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(_searchResults[index].name ?? ''),
+                        leading: Image.network(
+                          _searchResults[index].image ?? '',
+                          width: 50,
+                          height: 50,
+                        ),
                         subtitle: Text(
                           'Rp ${_searchResults[index].price} - ${_searchResults[index].address} - ${_searchResults[index].categoryGender}',
                         ),

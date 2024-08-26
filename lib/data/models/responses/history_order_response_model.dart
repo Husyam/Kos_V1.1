@@ -135,7 +135,7 @@ class HistoryOrderResponseModel {
 
 class HistoryOrder {
   final int? idOrder;
-  final int? userId;
+  final int? idUser;
   final int? personalDataId;
   final int? subTotal;
   final int? shippingCost;
@@ -151,7 +151,7 @@ class HistoryOrder {
 
   HistoryOrder({
     this.idOrder,
-    this.userId,
+    this.idUser,
     this.personalDataId,
     this.subTotal,
     this.shippingCost,
@@ -173,7 +173,7 @@ class HistoryOrder {
 
   factory HistoryOrder.fromMap(Map<String, dynamic> json) => HistoryOrder(
         idOrder: json["id_order"],
-        userId: json["user_id"],
+        idUser: json["id_user"],
         personalDataId: json["personal_data_id"],
         subTotal: json["sub_total"],
         shippingCost: json["shipping_cost"],
@@ -194,7 +194,7 @@ class HistoryOrder {
 
   Map<String, dynamic> toMap() => {
         "id_order": idOrder,
-        "user_id": userId,
+        "id_user": idUser,
         "personal_data_id": personalDataId,
         "sub_total": subTotal,
         "shipping_cost": shippingCost,

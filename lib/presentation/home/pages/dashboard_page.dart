@@ -5,6 +5,7 @@ import 'package:kos_mobile_v2_testing/presentation/home/pages/homepage.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/pages/maps_page.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/pages/cart_page.dart';
 import 'package:kos_mobile_v2_testing/presentation/search/pages/product_search_page.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
@@ -14,7 +15,6 @@ import '../../../data/datasources/product_remote_datasource.dart';
 import '../../../data/models/responses/product_response_mode.dart';
 import '../../account/pages/profile_screen.dart';
 import '../../auth/bloc/login/login_bloc.dart';
-import '../../auth/pages/login_page.dart';
 import '../widgets/theme.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -94,8 +94,15 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: Center(
+          child: LoadingAnimationWidget.discreteCircle(
+            color: const Color.fromARGB(255, 75, 138, 190),
+            size: 45,
+            secondRingColor: Colors.black,
+            thirdRingColor: Colors.purple,
+          ),
+        ),
       );
     }
 

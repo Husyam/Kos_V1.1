@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/models/product_quantity.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/bloc/order/order_bloc.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../core/components/buttons.dart';
 import '../../../core/components/spaces.dart';
@@ -429,8 +430,11 @@ class PaymentDetailPage extends StatelessWidget {
                         );
                       },
                       loading: () {
-                        return const Center(
-                          child: CircularProgressIndicator(),
+                        return Center(
+                          child: LoadingAnimationWidget.fourRotatingDots(
+                            color: Colors.blue,
+                            size: 45,
+                          ),
                         );
                       },
                     );

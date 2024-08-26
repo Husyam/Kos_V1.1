@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/data/models/responses/history_order_response_model.dart';
 
-import '../../../core/components/buttons.dart';
 import '../../../core/components/spaces.dart';
 import '../../../core/core.dart';
 import '../../../core/router/app_router.dart';
-import '../models/transaction_model.dart';
-import '../pages/order_detail_page.dart';
+
 import 'row_text.dart';
 
 class OrderCard extends StatelessWidget {

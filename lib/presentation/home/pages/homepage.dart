@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                 orElse: () => const SizedBox(),
                 loaded: (products) {
                   return ProductList(
-                    title: 'Produk Terbaru',
+                    title: 'Kamar Kos',
                     onSeeAllTap: () {
                       // context.goNamed(
                       //   RouteConstants.allProduct,
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                       // );
                     },
                     items:
-                        products.length > 3 ? products.sublist(0, 3) : products,
+                        products.length > 4 ? products.sublist(0, 5) : products,
                   );
                 },
               );

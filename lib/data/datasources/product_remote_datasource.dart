@@ -19,7 +19,7 @@ class ProductRemoteDatasource {
     int categoryId,
   ) async {
     final response = await http.get(
-      Uri.parse('${Variables.baseUrl}/api/products?category_id=$categoryId'),
+      Uri.parse('${Variables.baseUrl}/api/products?id_category=$categoryId'),
     );
     if (response.statusCode == 200) {
       return Right(ProductResponseModel.fromJson(response.body));

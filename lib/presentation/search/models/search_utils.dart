@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../../../data/models/responses/product_response_mode.dart';
 
 List<Product> searchProducts({

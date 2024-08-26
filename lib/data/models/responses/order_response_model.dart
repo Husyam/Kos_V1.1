@@ -311,7 +311,6 @@
 //         "updated_at": updatedAt?.toIso8601String(),
 //       };
 // }
-
 import 'dart:convert';
 
 class OrderResponseModel {
@@ -345,8 +344,8 @@ class OrderResponseModel {
 }
 
 class Order {
-  final int? userId;
-  final int? personalDataId;
+  final int? idUser;
+  final int? idPersonalData;
   final int? shippingCost;
   final int? subTotal;
   final int? totalCost;
@@ -360,10 +359,11 @@ class Order {
   final String? paymentVaNumber;
   final User? user;
   final List<OrderItem>? orderItems;
+  final PersonalData? personalData;
 
   Order({
-    this.userId,
-    this.personalDataId,
+    this.idUser,
+    this.idPersonalData,
     this.shippingCost,
     this.subTotal,
     this.totalCost,
@@ -377,6 +377,7 @@ class Order {
     this.paymentVaNumber,
     this.user,
     this.orderItems,
+    this.personalData,
   });
 
   factory Order.fromJson(String str) => Order.fromMap(json.decode(str));
@@ -384,8 +385,8 @@ class Order {
   String toJson() => json.encode(toMap());
 
   factory Order.fromMap(Map<String, dynamic> json) => Order(
-        userId: json["user_id"],
-        personalDataId: json["personal_data_id"],
+        idUser: json["id_user"],
+        idPersonalData: json["id_personal_data"],
         shippingCost: json["shipping_cost"],
         subTotal: json["sub_total"],
         totalCost: json["total_cost"],
@@ -406,11 +407,14 @@ class Order {
             ? []
             : List<OrderItem>.from(
                 json["order_items"]!.map((x) => OrderItem.fromMap(x))),
+        personalData: json["personal_data"] == null
+            ? null
+            : PersonalData.fromMap(json["personal_data"]),
       );
 
   Map<String, dynamic> toMap() => {
-        "user_id": userId,
-        "personal_data_id": personalDataId,
+        "id_user": idUser,
+        "id_personal_data": idPersonalData,
         "shipping_cost": shippingCost,
         "sub_total": subTotal,
         "total_cost": totalCost,
@@ -426,13 +430,14 @@ class Order {
         "order_items": orderItems == null
             ? []
             : List<dynamic>.from(orderItems!.map((x) => x.toMap())),
+        "personal_data": personalData?.toMap(),
       };
 }
 
 class OrderItem {
   final int? idOrderItem;
-  final int? orderId;
-  final int? productId;
+  final int? idOrder;
+  final int? idProduct;
   final int? quantity;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -440,8 +445,8 @@ class OrderItem {
 
   OrderItem({
     this.idOrderItem,
-    this.orderId,
-    this.productId,
+    this.idOrder,
+    this.idProduct,
     this.quantity,
     this.createdAt,
     this.updatedAt,
@@ -454,8 +459,8 @@ class OrderItem {
 
   factory OrderItem.fromMap(Map<String, dynamic> json) => OrderItem(
         idOrderItem: json["id_order_item"],
-        orderId: json["order_id"],
-        productId: json["product_id"],
+        idOrder: json["id_order"],
+        idProduct: json["id_product"],
         quantity: json["quantity"],
         createdAt: json["created_at"] == null
             ? null
@@ -469,8 +474,8 @@ class OrderItem {
 
   Map<String, dynamic> toMap() => {
         "id_order_item": idOrderItem,
-        "order_id": orderId,
-        "product_id": productId,
+        "id_order": idOrder,
+        "id_product": idProduct,
         "quantity": quantity,
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),
@@ -480,8 +485,8 @@ class OrderItem {
 
 class Product {
   final int? idProduct;
-  final int? categoryId;
-  final dynamic userId;
+  final int? idCategory;
+  final int? idUser;
   final String? name;
   final String? nameOwner;
   final String? categoryGender;
@@ -493,7 +498,7 @@ class Product {
   final String? latitude;
   final String? longitude;
   final String? image;
-  final dynamic multiImage;
+  final String? multiImage;
   final int? isAvailable;
   final String? fasilitas;
   final DateTime? createdAt;
@@ -501,8 +506,8 @@ class Product {
 
   Product({
     this.idProduct,
-    this.categoryId,
-    this.userId,
+    this.idCategory,
+    this.idUser,
     this.name,
     this.nameOwner,
     this.categoryGender,
@@ -527,8 +532,8 @@ class Product {
 
   factory Product.fromMap(Map<String, dynamic> json) => Product(
         idProduct: json["id_product"],
-        categoryId: json["category_id"],
-        userId: json["user_id"],
+        idCategory: json["id_category"],
+        idUser: json["id_user"],
         name: json["name"],
         nameOwner: json["name_owner"],
         categoryGender: json["category_gender"],
@@ -553,8 +558,8 @@ class Product {
 
   Map<String, dynamic> toMap() => {
         "id_product": idProduct,
-        "category_id": categoryId,
-        "user_id": userId,
+        "id_category": idCategory,
+        "id_user": idUser,
         "name": name,
         "name_owner": nameOwner,
         "category_gender": categoryGender,
@@ -569,6 +574,63 @@ class Product {
         "multi_image": multiImage,
         "is_available": isAvailable,
         "fasilitas": fasilitas,
+        "created_at": createdAt?.toIso8601String(),
+        "updated_at": updatedAt?.toIso8601String(),
+      };
+}
+
+class PersonalData {
+  final int? idPersonalData;
+  final String? name;
+  final String? gender;
+  final String? profession;
+  final String? contact;
+  final int? idUser;
+  final int? isDefault;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+
+  PersonalData({
+    this.idPersonalData,
+    this.name,
+    this.gender,
+    this.profession,
+    this.contact,
+    this.idUser,
+    this.isDefault,
+    this.createdAt,
+    this.updatedAt,
+  });
+
+  factory PersonalData.fromJson(String str) =>
+      PersonalData.fromMap(json.decode(str));
+
+  String toJson() => json.encode(toMap());
+
+  factory PersonalData.fromMap(Map<String, dynamic> json) => PersonalData(
+        idPersonalData: json["id_personal_data"],
+        name: json["name"],
+        gender: json["gender"],
+        profession: json["profession"],
+        contact: json["contact"],
+        idUser: json["id_user"],
+        isDefault: json["is_default"],
+        createdAt: json["created_at"] == null
+            ? null
+            : DateTime.parse(json["created_at"]),
+        updatedAt: json["updated_at"] == null
+            ? null
+            : DateTime.parse(json["updated_at"]),
+      );
+
+  Map<String, dynamic> toMap() => {
+        "id_personal_data": idPersonalData,
+        "name": name,
+        "gender": gender,
+        "profession": profession,
+        "contact": contact,
+        "id_user": idUser,
+        "is_default": isDefault,
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),
       };

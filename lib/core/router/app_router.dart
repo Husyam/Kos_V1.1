@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kos_mobile_v2_testing/presentation/auth/pages/sign_in_page.dart';
 import 'package:kos_mobile_v2_testing/presentation/personalData/pages/biodata_page.dart';
 
 import '../../data/models/responses/product_response_mode.dart';
@@ -17,44 +16,9 @@ import '../../presentation/orders/pages/payment_detail_page.dart';
 import '../../presentation/orders/pages/payment_waiting_page.dart';
 import '../../presentation/orders/pages/shipping_detail_page.dart';
 import '../../presentation/orders/pages/tracking_order_page.dart';
-import '../../presentation/personalData/models/address_model.dart';
 import '../../presentation/orders/pages/cart_page.dart';
 import '../../presentation/orders/pages/order_detail_page.dart';
 import '../../presentation/personalData/pages/add_biodata_page.dart';
-
-// import '../../presentation/address/models/address_model.dart';
-// import '../../presentation/address/pages/add_address_page.dart';
-// import '../../presentation/address/pages/address_page.dart';
-// import '../../presentation/address/pages/edit_address_page.dart';
-// import '../../presentation/auth/pages/login_page.dart';
-// import '../../presentation/auth/pages/register_page.dart';
-// import '../../presentation/home/pages/dashboard_page.dart';
-// import '../../presentation/intro/splash_page.dart';
-// import '../../presentation/orders/pages/cart_page.dart';
-// import '../../presentation/orders/pages/history_order_page.dart';
-// import '../../presentation/orders/pages/order_detail_page.dart';
-// import '../../presentation/orders/pages/payment_detail_page.dart';
-// import '../../presentation/orders/pages/payment_waiting_page.dart';
-// import '../../presentation/orders/pages/shipping_detail_page.dart';
-// import '../../presentation/orders/pages/tracking_order_page.dart';
-
-// import '../../../ui/address/models/address_model.dart';
-// import '../../../ui/address/pages/add_address_page.dart';
-// import '../../../ui/address/pages/address_page.dart';
-// import '../../../ui/address/pages/edit_address_page.dart';
-// import '../../../ui/auth/pages/login_page.dart';
-// import '../../../ui/auth/pages/register_page.dart';
-// import '../../../ui/auth/pages/verification_page.dart';
-// import '../../../ui/home/models/product_model.dart';
-// import '../../../ui/home/pages/product_detail_page.dart';
-
-// import '../../../ui/home/pages/root_page.dart';
-// import '../../../ui/intro/splash_page.dart';
-// import '../../../ui/orders/pages/cart_page.dart';
-// import '../../../ui/orders/pages/order_detail_page.dart';
-// import '../../../ui/orders/pages/payment_detail_page.dart';
-// import '../../../ui/orders/pages/shipping_detail_page.dart';
-// import '../../../ui/orders/pages/tracking_order_page.dart';
 
 part 'route_constants.dart';
 part 'enums/root_tab.dart';

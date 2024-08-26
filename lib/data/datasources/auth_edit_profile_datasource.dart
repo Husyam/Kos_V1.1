@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:kos_mobile_v2_testing/data/datasources/auth_local_datasource.dart';
 
 import '../../core/constants/variables.dart';

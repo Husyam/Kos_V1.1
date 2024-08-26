@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:kos_mobile_v2_testing/data/datasources/auth_edit_profile_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/models/responses/edit_profile_response_model.dart';
-import 'package:kos_mobile_v2_testing/presentation/account/pages/edit_profile.dart';
 
 part 'edit_profile_bloc.freezed.dart';
 part 'edit_profile_event.dart';

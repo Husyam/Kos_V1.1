@@ -15,7 +15,7 @@ class BidarProductBloc extends Bloc<BidarProductEvent, BidarProductState> {
   ) : super(const _Initial()) {
     on<_GetBidarProducts>((event, emit) async {
       emit(const BidarProductState.loading());
-      final response = await _productRemoteDatasource.getProductByCategory(2);
+      final response = await _productRemoteDatasource.getProductByCategory(1);
 
       response.fold(
         (l) => emit(const BidarProductState.error('Error fetching products')),

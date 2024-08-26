@@ -6,7 +6,6 @@ import '../../../core/core.dart';
 import '../../home/models/product_model.dart';
 import '../../home/models/store_model.dart';
 import '../models/track_record_model.dart';
-import '../widgets/product_tile.dart';
 import '../widgets/tracking_vertical.dart';
 
 class ShippingDetailPage extends StatelessWidget {

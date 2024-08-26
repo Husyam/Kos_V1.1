@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/personalData/bloc/addpersonaldata/addpersonaldata_bloc.dart';
-import 'package:kos_mobile_v2_testing/presentation/personalData/bloc/personal/personal_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/personalData/widgets/custom_dropdown.dart';
 
 import '../../../core/components/buttons.dart';
@@ -77,6 +76,12 @@ class AddAddressPage extends StatelessWidget {
                   context.goNamed(
                     RouteConstants.cart,
                     pathParameters: PathParameters().toMap(),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      backgroundColor: Colors.green,
+                      content: Text('Profile berhasil ditambahkan'),
+                    ),
                   );
                 },
               );

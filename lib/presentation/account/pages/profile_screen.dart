@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../../core/router/app_router.dart';
 import '../../../data/models/responses/auth_response_model.dart';
@@ -40,11 +41,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: bgColor,
         centerTitle: true,
       ),
+      backgroundColor: bgColor,
       body: BlocBuilder<GetProfileBloc, GetProfileState>(
         builder: (context, state) {
           return state.maybeWhen(
-            loading: () => const Center(
-              child: CircularProgressIndicator(),
+            loading: () => Center(
+              child: LoadingAnimationWidget.staggeredDotsWave(
+                color: primaryColor,
+                size: 50,
+              ),
             ),
             loaded: (user) => buildProfileUI(user),
             error: (message) => Center(

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/components/spaces.dart';
 import '../bloc/history_order/history_order_bloc.dart';
-import '../models/transaction_model.dart';
 import '../widgets/order_card.dart';
 
 class HistoryOrderPage extends StatefulWidget {

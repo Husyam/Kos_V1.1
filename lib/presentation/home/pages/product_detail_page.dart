@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kos_mobile_v2_testing/core/extensions/int_ext.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../core/assets/assets.gen.dart';
-import '../../../core/router/app_router.dart';
 import '../../../data/datasources/auth_local_datasource.dart';
 import '../../../data/models/responses/product_response_mode.dart';
+import '../../orders/pages/cart_page.dart';
+import '../bloc/checkout/checkout_bloc.dart';
 import '../models/facility_item.dart';
 import '../widgets/carousel.dart';
 import '../widgets/custom_button.dart';
@@ -114,7 +114,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
     return Scaffold(
       backgroundColor:
-          bgColor, // ubah bgColor ke Colors.white atau warna yang diinginkan
+          whiteColor, // ubah bgColor ke Colors.white atau warna yang diinginkan
       body: SafeArea(
         child: Stack(
           alignment: AlignmentDirectional.topCenter,
@@ -432,12 +432,18 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           ),
                           child: CustomButton(
                             title: 'Ajukan Sewa',
-                            onPressed: () {},
+                            onPressed: () {
+                              context
+                                  .read<CheckoutBloc>()
+                                  .add(CheckoutEvent.addItem(widget.data));
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CartPage()),
+                              );
+                            },
                           ),
-                        ),
-                        const SizedBox(
-                          height: 35,
-                        ),
+                        )
                       ],
                     ),
                   ),

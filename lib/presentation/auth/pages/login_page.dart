@@ -141,12 +141,12 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
           const SpaceHeight(50.0),
-          Button.outlined(
-            onPressed: () {},
-            label: 'Login with Google',
-            icon: Assets.images.google.image(height: 20.0),
-          ),
-          const SpaceHeight(50.0),
+          // Button.outlined(
+          //   onPressed: () {},
+          //   label: 'Login with Google',
+          //   icon: Assets.images.google.image(height: 20.0),
+          // ),
+          // const SpaceHeight(50.0),
           InkWell(
             onTap: () {
               context.goNamed(RouteConstants.register);

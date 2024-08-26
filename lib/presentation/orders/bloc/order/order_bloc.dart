@@ -22,14 +22,14 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
       emit(const OrderState.loading());
 
       final orderRequestData = OrderRequestModel(
-        personalDataId: event.personalDataId,
+        idPersonalData: event.personalDataId,
         paymentMethod: event.paymentMethod,
         paymentVaName: event.paymentVaName,
         subTotal: 0,
         totalCost: 0,
         items: event.products
             .map((e) =>
-                Item(productId: e.product.idProduct!, quantity: e.quantity))
+                Item(idProduct: e.product.idProduct!, quantity: e.quantity))
             .toList(),
       );
       final response = await orderRemoteDatasource.order(orderRequestData);

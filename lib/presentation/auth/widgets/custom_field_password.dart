@@ -30,6 +30,12 @@ class _PasswordFieldState extends State<PasswordField> {
       cursorColor: blackColor,
       keyboardType: TextInputType.visiblePassword,
       obscureText: _obscured,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter your password';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: "Password",
@@ -38,6 +44,11 @@ class _PasswordFieldState extends State<PasswordField> {
         isDense: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(defaultRadius),
+          borderSide: BorderSide(width: 1, color: Colors.grey),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(defaultRadius),
+          borderSide: BorderSide(width: 1, color: primaryColor),
         ),
         suffixIcon: GestureDetector(
           onTap: _toggleObscured,
