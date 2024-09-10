@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/pages/areaPopuler/bidar_page.dart';
 
 import '../../../../data/models/responses/category_response_model.dart';
 import '../../bloc/category/category_bloc.dart';
+import '../../pages/areaPopuler/uigm_page.dart';
+import '../../pages/areaPopuler/uin_page.dart';
+import '../../pages/areaPopuler/unsri_page.dart';
 import '../category_button.dart';
 
 // class MenuCategories extends StatefulWidget {
@@ -144,7 +148,38 @@ class _MenuCategoriesState extends State<MenuCategories> {
                     child: CategoryButton(
                       imagePath: imageUrl,
                       label: category.name ?? 'Unknown',
-                      onPressed: () {},
+                      onPressed: () {
+                        //kondisi ke halamanan BidarPage, UigmPage, UinPage, UnsriPage sesuai dengan label
+                        if (category.name == 'BIDAR') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const BidarPage(),
+                            ),
+                          );
+                        } else if (category.name == 'UIGM') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const UigmPage(),
+                            ),
+                          );
+                        } else if (category.name == 'UIN') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const UinPage(),
+                            ),
+                          );
+                        } else if (category.name == 'UNSRI') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const UnsriPage(),
+                            ),
+                          );
+                        }
+                      },
                     ),
                   );
                 },

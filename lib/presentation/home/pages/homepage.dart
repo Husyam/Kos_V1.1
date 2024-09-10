@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/all_product/all_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/bidar_product/bidar_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/bloc/uigm_product/uigm_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/uin_product/uin_product_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/bloc/unsri_product/unsri_product_bloc.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/search_input.dart';
@@ -48,6 +50,12 @@ class _HomePageState extends State<HomePage> {
         );
     context.read<UinProductBloc>().add(
           const UinProductEvent.getUinProducts(),
+        );
+    context.read<UigmProductBloc>().add(
+          const UigmProductEvent.getUigmProducts(),
+        );
+    context.read<UnsriProductBloc>().add(
+          const UnsriProductEvent.getUnsriProducts(),
         );
 
     super.initState();
@@ -116,24 +124,6 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               );
-
-              // return badges.Badge(
-              //   badgeContent: const Text(
-              //     '1',
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              //   child: IconButton(
-              //     onPressed: () {
-              //       context.goNamed(
-              //         RouteConstants.cart,
-              //         pathParameters: PathParameters().toMap(),
-              //       );
-              //     },
-              //     icon: Assets.icons.cart.svg(height: 24.0),
-              //   ),
-              // );
             },
           ),
           IconButton(
@@ -231,9 +221,7 @@ class _HomePageState extends State<HomePage> {
                 loaded: (products) {
                   return ProductList(
                     title: 'Bidar',
-                    onSeeAllTap: () {
-                      // Handle onSeeAllTap action here
-                    },
+                    onSeeAllTap: () {},
                     items: products,
                   );
                 },
@@ -264,11 +252,31 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               );
-              // return ProductList(
-              //   title: 'UIN Raden Fatah Palembang',
-              //   onSeeAllTap: () {},
-              //   items: bestSellers,
-              // );
+            },
+          ),
+          BlocBuilder<UigmProductBloc, UigmProductState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                loading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+                error: (message) => Center(
+                  child: Text(message),
+                ),
+                orElse: () => const SizedBox(),
+                loaded: (products) {
+                  return ProductList(
+                    title: 'UIGM',
+                    onSeeAllTap: () {
+                      // context.goNamed(
+                      //   RouteConstants.allProduct,
+                      //   pathParameters: PathParameters().toMap(),
+                      // );
+                    },
+                    items: products,
+                  );
+                },
+              );
             },
           ),
         ],

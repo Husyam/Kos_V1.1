@@ -1,5 +1,5 @@
 class Variables {
-  static const String baseUrl = 'http://192.168.18.51:8000';
+  static const String baseUrl = 'http://10.1.18.1:8000';
 
   static const String baseUrlImage = '$baseUrl/public/storage/products/';
 

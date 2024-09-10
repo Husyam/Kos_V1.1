@@ -15,7 +15,9 @@ import 'package:kos_mobile_v2_testing/presentation/auth/bloc/register/register_b
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/all_product/all_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/bidar_product/bidar_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/bloc/uigm_product/uigm_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/uin_product/uin_product_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/bloc/unsri_product/unsri_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/bloc/history_order/history_order_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/bloc/order/order_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/bloc/order_detail/order_detail_bloc.dart';
@@ -58,6 +60,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => UinProductBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => UigmProductBloc(ProductRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => UnsriProductBloc(ProductRemoteDatasource()),
         ),
         BlocProvider(
           create: (context) => CheckoutBloc(),

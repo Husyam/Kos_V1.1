@@ -13,9 +13,9 @@ class UinProductBloc extends Bloc<UinProductEvent, UinProductState> {
   UinProductBloc(
     this._productRemoteDatasource,
   ) : super(const _Initial()) {
-    on<UinProductEvent>((event, emit) async {
+    on<_GetUinProducts>((event, emit) async {
       emit(const UinProductState.loading());
-      final response = await _productRemoteDatasource.getProductByCategory(2);
+      final response = await _productRemoteDatasource.getProductByCategory(3);
 
       response.fold(
         (l) => emit(const UinProductState.error('Error fetching products')),
