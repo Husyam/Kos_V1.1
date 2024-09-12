@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/widgets/organism/categories_list.dart';
 
 import '../../bloc/uin_product/uin_product_bloc.dart';
 import '../../widgets/organism/product_list.dart';
@@ -10,7 +11,7 @@ class UinPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: const Text('UIN'),
         centerTitle: true,
@@ -30,16 +31,7 @@ class UinPage extends StatelessWidget {
                 ),
                 orElse: () => const SizedBox(),
                 loaded: (products) {
-                  return ProductList(
-                    title: 'UIN Raden Fatah Palembang',
-                    onSeeAllTap: () {
-                      // context.goNamed(
-                      //   RouteConstants.allProduct,
-                      //   pathParameters: PathParameters().toMap(),
-                      // );
-                    },
-                    items: products,
-                  );
+                  return CategoriesList(title: 'uin', items: products);
                 },
               );
               // return ProductList(

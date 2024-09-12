@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/widgets/organism/categories_list.dart';
 
 import '../../bloc/bidar_product/bidar_product_bloc.dart';
 import '../../widgets/organism/product_list.dart';
@@ -10,9 +11,11 @@ class BidarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: const Text('BIDAR'),
         centerTitle: true,
+        backgroundColor: Colors.white,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
@@ -28,11 +31,8 @@ class BidarPage extends StatelessWidget {
                 ),
                 orElse: () => const SizedBox(),
                 loaded: (products) {
-                  return ProductList(
+                  return CategoriesList(
                     title: 'Bidar',
-                    onSeeAllTap: () {
-                      // Handle onSeeAllTap action here
-                    },
                     items: products,
                   );
                 },

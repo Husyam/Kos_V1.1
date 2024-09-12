@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/pages/areaPopuler/bidar_page.dart';
@@ -176,6 +178,12 @@ class _MenuCategoriesState extends State<MenuCategories> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => const UnsriPage(),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Unknown category'),
                             ),
                           );
                         }
