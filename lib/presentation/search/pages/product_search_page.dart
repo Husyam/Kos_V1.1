@@ -82,23 +82,26 @@ class _SearchPageState extends State<SearchPage> {
       final productResponse = ProductResponseModel.fromJson(response.body);
       final products = productResponse.data?.data ?? [];
 
-      final filteredProducts = products.where((product) {
-        final nameMatches =
-            product.name?.toLowerCase().contains(query.toLowerCase()) ?? false;
-        final priceMatches = product.price.toString().contains(query);
-        final addressMatches =
-            product.address?.toLowerCase().contains(query.toLowerCase()) ??
-                false;
-        final categoryGenderMatches = product.categoryGender
-                ?.toLowerCase()
-                .contains(query.toLowerCase()) ??
-            false;
+      final filteredProducts = products.where(
+        (product) {
+          final nameMatches =
+              product.name?.toLowerCase().contains(query.toLowerCase()) ??
+                  false;
+          final priceMatches = product.price.toString().contains(query);
+          final addressMatches =
+              product.address?.toLowerCase().contains(query.toLowerCase()) ??
+                  false;
+          final categoryGenderMatches = product.categoryGender
+                  ?.toLowerCase()
+                  .contains(query.toLowerCase()) ??
+              false;
 
-        return nameMatches ||
-            priceMatches ||
-            addressMatches ||
-            categoryGenderMatches;
-      }).toList();
+          return nameMatches ||
+              priceMatches ||
+              addressMatches ||
+              categoryGenderMatches;
+        },
+      ).toList();
 
       print('Filtered products: $filteredProducts');
       setState(() {

@@ -33,7 +33,8 @@ class BidarPage extends StatelessWidget {
                 loaded: (products) {
                   return CategoriesList(
                     title: 'Bidar',
-                    items: products,
+                    items:
+                        products.length > 5 ? products.sublist(0, 5) : products,
                   );
                 },
               );

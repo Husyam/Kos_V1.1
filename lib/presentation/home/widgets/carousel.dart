@@ -15,12 +15,12 @@ class CarouselSliderWithDots extends StatefulWidget {
 }
 
 class _CarouselSliderWithDotsState extends State<CarouselSliderWithDots> {
-  late CarouselController controller;
+  late CarouselSliderController controller;
   int currentIndex = 0;
 
   @override
   void initState() {
-    controller = CarouselController();
+    controller = CarouselSliderController();
     super.initState();
   }
 

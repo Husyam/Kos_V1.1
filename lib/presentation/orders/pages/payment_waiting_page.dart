@@ -174,7 +174,7 @@ class _PaymentWaitingPageState extends State<PaymentWaitingPage> {
                 ),
                 const SpaceWidth(12.0),
                 CountdownTimer(
-                  minute: 1,
+                  minute: 1440,
                   onTimerCompletion: onTimerCompletion,
                 ),
               ],
@@ -330,15 +330,15 @@ class _PaymentWaitingPageState extends State<PaymentWaitingPage> {
               label: 'Belanja Lagi',
             ),
             const SpaceHeight(20.0),
-            Button.outlined(
-              onPressed: () {
-                context.pushNamed(
-                  RouteConstants.trackingOrder,
-                  pathParameters: PathParameters().toMap(),
-                );
-              },
-              label: 'Cek Status Pembayaran',
-            ),
+            // Button.outlined(
+            //   onPressed: () {
+            //     context.pushNamed(
+            //       RouteConstants.trackingOrder,
+            //       pathParameters: PathParameters().toMap(),
+            //     );
+            //   },
+            //   label: 'Cek Status Pembayaran',
+            // ),
           ],
         ),
       ),

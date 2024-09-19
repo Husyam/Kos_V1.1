@@ -78,6 +78,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Login Terlebih Dahulu'),
+            backgroundColor: Colors.red,
           ),
         );
         context.goNamed(
