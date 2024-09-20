@@ -9,13 +9,13 @@ class CustomButton extends StatelessWidget {
   final TextStyle? textStyle;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.title,
     this.width = double.infinity,
     required this.onPressed,
     this.margin = EdgeInsets.zero,
     this.textStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

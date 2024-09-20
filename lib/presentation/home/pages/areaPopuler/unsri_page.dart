@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/unsri_product/unsri_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/widgets/organism/categories_list.dart';
 
-import '../../widgets/organism/product_list.dart';
 
 class UnsriPage extends StatelessWidget {
-  const UnsriPage({Key? key}) : super(key: key);
+  const UnsriPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ import '../widgets/custom_field_password.dart';
 import '../widgets/custom_text_form_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -40,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please fill in all fields')),
+        const SnackBar(content: Text('Please fill in all fields')),
       );
       return;
     }
@@ -59,7 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     Widget logo() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 30,
         ),
         child: Row(
@@ -68,7 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
               'assets/images/logo.png',
               width: 50,
             ),
-            SizedBox(
+            const SizedBox(
               width: 12,
             ),
             Text(
@@ -85,7 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Widget title() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 30,
         ),
         child: Column(
@@ -194,7 +194,7 @@ class _RegisterPageState extends State<RegisterPage> {
           state.maybeWhen(
             loaded: (response) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Registrasi berhasil!')),
+                const SnackBar(content: Text('Registrasi berhasil!')),
               );
               context.goNamed(
                 RouteConstants.login,
@@ -221,7 +221,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Widget pageToRegister() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 24,
           bottom: 50,
         ),

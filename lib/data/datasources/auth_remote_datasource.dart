@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:kos_mobile_v2_testing/core/constants/variables.dart';

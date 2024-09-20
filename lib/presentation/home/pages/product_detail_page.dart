@@ -91,7 +91,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(
-            builder: (context) => Text('Errorr'),
+            builder: (context) => const Text('Errorr'),
           ),
         );
       }
@@ -317,7 +317,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24, // ubah defaultMargin
                           ),
-                          child: Container(
+                          child: SizedBox(
                             height: 200,
                             width: double.infinity,
                             child: GoogleMap(
@@ -332,7 +332,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               ),
                               markers: {
                                 Marker(
-                                  markerId: MarkerId('product_location'),
+                                  markerId: const MarkerId('product_location'),
                                   position: LatLng(
                                     double.parse(widget.data
                                         .latitude!), // latitude from API data
@@ -439,7 +439,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CartPage()),
+                                    builder: (context) => const CartPage()),
                               );
                             },
                           ),

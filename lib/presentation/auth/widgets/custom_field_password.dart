@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../home/widgets/theme.dart';
 
 class PasswordField extends StatefulWidget {
-  PasswordField({
-    Key? key,
+  const PasswordField({
+    super.key,
     required this.controller,
-  }) : super(key: key);
+  });
 
   final TextEditingController controller;
 
@@ -44,7 +44,7 @@ class _PasswordFieldState extends State<PasswordField> {
         isDense: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(defaultRadius),
-          borderSide: BorderSide(width: 1, color: Colors.grey),
+          borderSide: const BorderSide(width: 1, color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(defaultRadius),

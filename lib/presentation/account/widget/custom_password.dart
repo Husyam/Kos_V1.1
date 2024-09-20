@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomPasswordInput extends StatefulWidget {
+  const CustomPasswordInput({super.key});
+
   @override
   _CustomPasswordInputState createState() => _CustomPasswordInputState();
 }
@@ -14,14 +16,14 @@ class _CustomPasswordInputState extends State<CustomPasswordInput> {
       obscureText: _obscureText,
       decoration: InputDecoration(
         labelText: 'Password',
-        labelStyle: TextStyle(fontSize: 16, color: Colors.grey),
+        labelStyle: const TextStyle(fontSize: 16, color: Colors.grey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(width: 1, color: Colors.grey),
+          borderSide: const BorderSide(width: 1, color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(width: 1, color: Colors.blue),
+          borderSide: const BorderSide(width: 1, color: Colors.blue),
         ),
         suffixIcon: IconButton(
           icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),

@@ -41,7 +41,7 @@ class AppRouter {
           GoRoute(
             name: RouteConstants.register,
             path: RouteConstants.registerPath,
-            builder: (context, state) => RegisterPage(),
+            builder: (context, state) => const RegisterPage(),
           ),
         ],
       ),
@@ -144,7 +144,7 @@ class AppRouter {
               GoRoute(
                 name: RouteConstants.addBiodataPage,
                 path: RouteConstants.addBiodataPath,
-                builder: (context, state) => AddAddressPage(),
+                builder: (context, state) => const AddAddressPage(),
               ),
               // GoRoute(
               //   name: RouteConstants.editBiodata,

@@ -12,7 +12,7 @@ import '../../../data/datasources/firebase_messaging_remote_datasouce.dart';
 import '../bloc/login/login_bloc.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();

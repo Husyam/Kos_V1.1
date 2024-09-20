@@ -10,23 +10,23 @@ class CustomTextFormField extends StatelessWidget {
   final String keyboardType;
 
   const CustomTextFormField({
-    Key? key,
+    super.key,
     required this.title,
     required this.hintText,
     this.obscureText = false,
     this.keyboardType = '',
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           TextFormField(

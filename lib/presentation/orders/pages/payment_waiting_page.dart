@@ -19,9 +19,9 @@ import '../widgets/countdown_timer.dart';
 
 class PaymentWaitingPage extends StatefulWidget {
   const PaymentWaitingPage({
-    Key? key,
+    super.key,
     required this.orderId,
-  }) : super(key: key);
+  });
   final int orderId;
 
   @override
@@ -264,9 +264,9 @@ class _PaymentWaitingPageState extends State<PaymentWaitingPage> {
                                 Clipboard.setData(ClipboardData(text: vaNumber))
                                     .then((_) {
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
-                                    content: const Text('Copied to clipboard'),
-                                    duration: const Duration(seconds: 1),
+                                      .showSnackBar(const SnackBar(
+                                    content: Text('Copied to clipboard'),
+                                    duration: Duration(seconds: 1),
                                     backgroundColor: AppColors.primary,
                                   ));
                                 });

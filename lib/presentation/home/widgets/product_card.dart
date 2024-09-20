@@ -11,7 +11,7 @@ import '../../../core/router/app_router.dart';
 class ProductCard extends StatelessWidget {
   final Product data;
   final String imageUrl;
-  ProductCard({
+  const ProductCard({
     super.key,
     required this.data,
     required this.imageUrl,

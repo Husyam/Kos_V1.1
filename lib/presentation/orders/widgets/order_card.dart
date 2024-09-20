@@ -25,7 +25,7 @@ class OrderCard extends StatelessWidget {
         } else {
           // Tangani kasus id null jika diperlukan
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Order ID is null')),
+            const SnackBar(content: Text('Order ID is null')),
           );
         }
       },

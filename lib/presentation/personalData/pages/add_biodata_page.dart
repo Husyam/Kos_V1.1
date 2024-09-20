@@ -96,7 +96,7 @@ class AddAddressPage extends StatelessWidget {
                           professionController.text.isEmpty ||
                           phoneNumberController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Harap isi semua field')),
+                          const SnackBar(content: Text('Harap isi semua field')),
                         );
                         return;
                       }

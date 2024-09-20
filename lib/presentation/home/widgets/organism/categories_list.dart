@@ -3,7 +3,6 @@ import "package:flutter/material.dart";
 import "package:kos_mobile_v2_testing/core/constants/variables.dart";
 import "package:kos_mobile_v2_testing/data/models/responses/product_response_mode.dart";
 
-import "package:kos_mobile_v2_testing/presentation/home/widgets/title_content.dart";
 
 import "../product_card.dart";
 
@@ -11,10 +10,10 @@ class CategoriesList extends StatelessWidget {
   final String title;
   final List<Product> items;
   const CategoriesList({
-    Key? key,
+    super.key,
     required this.title,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

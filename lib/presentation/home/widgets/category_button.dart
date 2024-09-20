@@ -51,11 +51,11 @@ class CategoryButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const CategoryButton({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.label,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

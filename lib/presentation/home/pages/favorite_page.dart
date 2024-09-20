@@ -6,7 +6,7 @@ import 'package:kos_mobile_v2_testing/presentation/home/pages/product_detail_pag
 import '../../../data/datasources/auth_local_datasource.dart';
 
 class FavoritePage extends StatefulWidget {
-  const FavoritePage({Key? key}) : super(key: key);
+  const FavoritePage({super.key});
 
   @override
   State<FavoritePage> createState() => _FavoritePageState();

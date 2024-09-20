@@ -6,7 +6,7 @@ import '../../home/widgets/custom_button.dart';
 import '../../home/widgets/theme.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +65,13 @@ class Login extends StatelessWidget {
 
     Widget inputSelection() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 30,
         ),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 bottom: 20,
               ),
               child: Column(
@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   TextFormField(
@@ -108,7 +108,7 @@ class Login extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 bottom: 14,
               ),
               child: Column(
@@ -121,7 +121,7 @@ class Login extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   TextFormField(
@@ -136,7 +136,7 @@ class Login extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
                         child: GestureDetector(
                           onTap: () {},
-                          child: Icon(
+                          child: const Icon(
                             Icons.visibility_rounded,
                             size: 24,
                           ),
@@ -186,7 +186,7 @@ class Login extends StatelessWidget {
 
     Widget submitButton() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 24,
         ),
         child: CustomButton(
@@ -206,7 +206,7 @@ class Login extends StatelessWidget {
 
     Widget pageToRegister() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 24,
         ),
         child: Row(

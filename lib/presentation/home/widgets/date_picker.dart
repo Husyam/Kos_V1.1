@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class PagePicker extends StatefulWidget {
-  const PagePicker({Key? key}) : super(key: key);
+  const PagePicker({super.key});
 
   @override
   State<PagePicker> createState() => _PagePickerState();

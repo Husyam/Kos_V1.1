@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -108,7 +107,7 @@ import '../category_button.dart';
 // }
 
 class MenuCategories extends StatefulWidget {
-  const MenuCategories({Key? key}) : super(key: key);
+  const MenuCategories({super.key});
 
   @override
   State<MenuCategories> createState() => _MenuCategoriesState();

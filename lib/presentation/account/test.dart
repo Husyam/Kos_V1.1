@@ -10,7 +10,7 @@ import '../home/widgets/custom_button.dart';
 import '../home/widgets/theme.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key}) : super(key: key);
+  const AccountPage({super.key});
 
   @override
   _AccountPageState createState() => _AccountPageState();

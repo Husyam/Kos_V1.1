@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kos_mobile_v2_testing/presentation/account/widget/custom_password.dart';
 import 'package:kos_mobile_v2_testing/presentation/auth/widgets/custom_field_password.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -11,7 +10,7 @@ import '../bloc/get_profile/get_profile_bloc.dart';
 import '../widget/custom_input_decoration.dart';
 
 class EditProfile extends StatefulWidget {
-  const EditProfile({Key? key}) : super(key: key);
+  const EditProfile({super.key});
 
   @override
   _EditProfileState createState() => _EditProfileState();
@@ -80,11 +79,11 @@ class _EditProfileState extends State<EditProfile> {
                   // labelStyle: TextStyle(fontSize: 16, color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.grey),
+                    borderSide: const BorderSide(width: 1, color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.blue),
+                    borderSide: const BorderSide(width: 1, color: Colors.blue),
                   ),
                   filled: true,
                   fillColor: Colors.white,
@@ -104,11 +103,11 @@ class _EditProfileState extends State<EditProfile> {
                   // labelStyle: TextStyle(fontSize: 16, color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.grey),
+                    borderSide: const BorderSide(width: 1, color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.blue),
+                    borderSide: const BorderSide(width: 1, color: Colors.blue),
                   ),
                   filled: true,
                   fillColor: Colors.white,
@@ -129,11 +128,11 @@ class _EditProfileState extends State<EditProfile> {
                   // labelStyle: TextStyle(fontSize: 16, color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.grey),
+                    borderSide: const BorderSide(width: 1, color: Colors.grey),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(width: 1, color: Colors.blue),
+                    borderSide: const BorderSide(width: 1, color: Colors.blue),
                   ),
                   filled: true,
                   fillColor: Colors.white,

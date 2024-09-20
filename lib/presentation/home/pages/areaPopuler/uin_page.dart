@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/widgets/organism/categories_list.dart';
 
 import '../../bloc/uin_product/uin_product_bloc.dart';
-import '../../widgets/organism/product_list.dart';
 
 class UinPage extends StatelessWidget {
-  const UinPage({Key? key}) : super(key: key);
+  const UinPage({super.key});
 
   @override
   Widget build(BuildContext context) {

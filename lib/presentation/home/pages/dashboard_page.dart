@@ -21,9 +21,9 @@ class DashboardPage extends StatefulWidget {
   final int currentTab;
 
   const DashboardPage({
-    Key? key,
+    super.key,
     required this.currentTab,
-  }) : super(key: key);
+  });
 
   @override
   _DashboardPageState createState() => _DashboardPageState();
@@ -107,7 +107,7 @@ class _DashboardPageState extends State<DashboardPage> {
       );
     }
 
-    final List<Widget> _pages = [
+    final List<Widget> pages = [
       const HomePage(),
       MapsPage(productResponseModel: _productResponseModel!),
       const FavoritePage(),
@@ -119,7 +119,7 @@ class _DashboardPageState extends State<DashboardPage> {
       backgroundColor: bgColor,
       body: IndexedStack(
         index: _selectedIndex,
-        children: _pages,
+        children: pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: bgColor,

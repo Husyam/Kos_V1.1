@@ -7,7 +7,7 @@ import '../widgets/date_picker.dart';
 import '../widgets/theme.dart';
 
 class CheckoutPage extends StatelessWidget {
-  CheckoutPage({Key? key}) : super(key: key);
+  CheckoutPage({super.key});
 
   final firstNameController = TextEditingController();
   final numberContactController = TextEditingController();

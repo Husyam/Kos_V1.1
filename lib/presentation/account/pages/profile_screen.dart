@@ -96,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage(
                                 'assets/images/Profile.png',
@@ -114,7 +114,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   fontSize: 18,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 4,
                               ),
                               Text(
@@ -123,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   fontSize: 14,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 4,
                               ),
                               Text(
@@ -134,7 +134,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               CustomButton(
                                 width: 110,
-                                margin: EdgeInsets.only(
+                                margin: const EdgeInsets.only(
                                   top: 28,
                                   right: 29,
                                 ),
@@ -171,7 +171,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => FavoritePage(),
+                                builder: (context) => const FavoritePage(),
                               ),
                             );
                           },
