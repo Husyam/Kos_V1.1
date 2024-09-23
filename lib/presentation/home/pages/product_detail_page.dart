@@ -244,24 +244,27 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24, // ubah defaultMargin
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              widget.data.fasilitas!.isEmpty
-                                  ? const Text('Tidak Ada Fasilitas')
-                                  : Row(
-                                      children: widget.data.fasilitas!
-                                          .map(
-                                            (facility) => FacilityItem(
-                                              name: facility,
-                                              imageUrl: fasilitas[facility] ??
-                                                  'assets/images/fasilitas/icons8-error-80.png',
-                                              //total: 0,
-                                            ),
-                                          )
-                                          .toList(),
-                                    ),
-                            ],
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                widget.data.fasilitas!.isEmpty
+                                    ? const Text('Tidak Ada Fasilitas')
+                                    : Row(
+                                        children: widget.data.fasilitas!
+                                            .map(
+                                              (facility) => FacilityItem(
+                                                name: facility,
+                                                imageUrl: fasilitas[facility] ??
+                                                    'assets/images/fasilitas/icons8-error-80.png',
+                                                //total: 0,
+                                              ),
+                                            )
+                                            .toList(),
+                                      ),
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(
