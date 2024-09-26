@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/widgets/theme.dart';
+import 'package:quickalert/quickalert.dart';
 
 import '../../../core/router/app_router.dart';
 import '../../home/widgets/custom_button.dart';
@@ -193,17 +194,31 @@ class _RegisterPageState extends State<RegisterPage> {
         listener: (context, state) {
           state.maybeWhen(
             loaded: (response) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Registrasi berhasil!')),
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   const SnackBar(content: Text('Registrasi berhasil!')),
+              // );
+
+              QuickAlert.show(
+                context: context,
+                type: QuickAlertType.success,
+                title: 'Success',
+                text: 'Registrasi berhasil! Silahkan login',
               );
+
               context.goNamed(
                 RouteConstants.login,
                 pathParameters: PathParameters().toMap(),
               );
             },
             error: (message) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(message)),
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   SnackBar(content: Text(message)),
+              // );
+
+              QuickAlert.show(
+                context: context,
+                type: QuickAlertType.error,
+                title: message,
               );
             },
             orElse: () {},
