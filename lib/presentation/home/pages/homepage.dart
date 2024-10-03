@@ -7,6 +7,7 @@ import 'package:kos_mobile_v2_testing/presentation/home/bloc/checkout/checkout_b
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/uigm_product/uigm_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/uin_product/uin_product_bloc.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/unsri_product/unsri_product_bloc.dart';
+import 'package:kos_mobile_v2_testing/presentation/home/pages/areaPopuler/bidar_page.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/search_input.dart';
@@ -150,7 +151,7 @@ class _HomePageState extends State<HomePage> {
           BannerSlider(items: banners1),
           const SpaceHeight(12.0),
           TitleContent(
-            title: 'Area Populer',
+            title: 'Area Dekat Kampus',
             onSeeAllTap: () {},
           ),
           const MenuCategories(),
@@ -176,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                       // );
                     },
                     items:
-                        products.length > 4 ? products.sublist(0, 5) : products,
+                        products.length > 5 ? products.sublist(0, 5) : products,
                   );
                 },
               );
@@ -221,7 +222,14 @@ class _HomePageState extends State<HomePage> {
                 loaded: (products) {
                   return ProductList(
                     title: 'Bidar',
-                    onSeeAllTap: () {},
+                    onSeeAllTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BidarPage(),
+                        ),
+                      );
+                    },
                     items: products,
                   );
                 },
