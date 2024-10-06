@@ -6,50 +6,6 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRemoteDatasource {
-  // Future<Either<String, AuthResponseModel>> login(
-  //     String email, String password) async {
-  //   // Call login API
-  //   // If success, return Right(token)
-  //   // If error, return Left(errorMessage)
-  //   final response = await http.post(
-  //     Uri.parse('${Variables.baseUrl}/api/login'),
-  //     body: {
-  //       'email': email,
-  //       'password': password,
-  //     },
-  //   );
-
-  //   if (response.statusCode == 200) {
-  //     return Right(AuthResponseModel.fromJson(response.body));
-  //   } else {
-  //     return Left(response.body);
-  //   }
-
-  // Future<Either<String, AuthResponseModel>> login(
-  //     String email, String password) async {
-  //   try {
-  //     final response = await http.post(
-  //       Uri.parse('${Variables.baseUrl}/api/login'),
-  //       body: {
-  //         'email': email,
-  //         'password': password,
-  //       },
-  //       headers: {
-  //         'Accept': 'application/json',
-  //       },
-  //     );
-
-  //     if (response.statusCode == 200) {
-  //       final authResponseModel = AuthResponseModel.fromJson(response.body);
-  //       print('Login success, token: ${authResponseModel.accessToken}');
-  //       return Right(authResponseModel);
-  //     } else {
-  //       return const Left('Login error');
-  //     }
-  //   } catch (e) {
-  //     return Left('Error: $e');
-  //   }
-  // }
   Future<Either<String, AuthResponseModel>> login(
       String email, String password) async {
     try {

@@ -46,7 +46,7 @@ class _AddressPageState extends State<DataDiri> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: const Text('Profile Pengguna'),
+        title: const Text('Data Pemesan'),
         backgroundColor: bgColor,
         centerTitle: true,
         // actions: [
@@ -67,7 +67,7 @@ class _AddressPageState extends State<DataDiri> {
         padding: const EdgeInsets.all(20.0),
         children: [
           const Text(
-            'Pilih profile pengguna yang akan digunakan',
+            'Pilih salah satu data pemesan yang akan digunakan',
             style: TextStyle(
               fontSize: 16,
             ),
@@ -134,7 +134,7 @@ class _AddressPageState extends State<DataDiri> {
                 ).toMap(),
               );
             },
-            label: 'Tambah Profile Pengguna Baru',
+            label: 'Tambah Data Pemesan',
           ),
           const SpaceHeight(50.0),
         ],

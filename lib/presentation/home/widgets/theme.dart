@@ -52,7 +52,7 @@ TextStyle greyRegularTextStyle = GoogleFonts.poppins(
 
 //create TextStyle greyColor fontweight light
 TextStyle greyLightTextStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w300,
+  fontWeight: FontWeight.w400,
   color: greyColor,
 );
 

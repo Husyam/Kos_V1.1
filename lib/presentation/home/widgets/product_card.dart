@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kos_mobile_v2_testing/core/constants/variables.dart';
+import 'package:kos_mobile_v2_testing/data/datasources/auth_local_datasource.dart';
 import 'package:kos_mobile_v2_testing/data/models/responses/product_response_mode.dart';
 import 'package:kos_mobile_v2_testing/presentation/home/bloc/checkout/checkout_bloc.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 
 import '../../../core/core.dart';
 import '../../../core/router/app_router.dart';
@@ -117,7 +120,8 @@ class ProductCard extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '${data.price!.currencyFormatRp} / Bulan',
+                    // '${data.price!.currencyFormatRp} / data.rentalType',
+                    '${data.price!.currencyFormatRp} / ${data.rentalType}',
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
@@ -163,10 +167,28 @@ class ProductCard extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: IconButton(
-                    onPressed: () {
-                      context
-                          .read<CheckoutBloc>()
-                          .add(CheckoutEvent.addItem(data));
+                    // onPressed: () {
+                    //   context
+                    //       .read<CheckoutBloc>()
+                    //       .add(CheckoutEvent.addItem(data));
+                    // },
+                    onPressed: () async {
+                      final isAuth = await AuthLocalDatasource().isAuth();
+                      if (!isAuth) {
+                        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.error,
+                          title: 'Silahkan login terlebih dahulu',
+                        );
+                        await Future.delayed(const Duration(
+                            seconds:
+                                3)); // Tambahkan delay untuk menampilkan pesan QuickAlert
+                        context.goNamed(RouteConstants.login);
+                      } else {
+                        context
+                            .read<CheckoutBloc>()
+                            .add(CheckoutEvent.addItem(data));
+                      }
                     },
                     icon: Container(
                       padding: const EdgeInsets.all(4.0),

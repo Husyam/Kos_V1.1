@@ -202,7 +202,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 context: context,
                 type: QuickAlertType.success,
                 title: 'Success',
-                text: 'Registrasi berhasil! Silahkan login',
+                text:
+                    'Registrasi berhasil! Silahkan login, Silahkan cek email anda untuk verifikasi akun',
               );
 
               context.goNamed(

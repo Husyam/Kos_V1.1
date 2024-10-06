@@ -69,10 +69,24 @@ class CartTile extends StatelessWidget {
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
+                            // data.product.price!.currencyFormatRp and data.rentalType,
                             data.product.price!.currencyFormatRp,
+
+                            style: const TextStyle(
+                              color: AppColors.primary,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            // data.product.price!.currencyFormatRp and data.rentalType,
+                            // '${data.price!.currencyFormatRp} / ${data.rentalType}',
+                            '/ ${data.product.rentalType.toString()}',
+
                             style: const TextStyle(
                               color: AppColors.primary,
                               fontSize: 16,
@@ -112,7 +126,8 @@ class CartTile extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      '${data.quantity} bulan',
+                      // '${data.quantity and data.rentalType} ',
+                      '${data.quantity} ',
                     ),
                   ),
                   const SpaceWidth(4.0),

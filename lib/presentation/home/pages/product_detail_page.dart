@@ -179,7 +179,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: ' /Bulan',
+                                          text: ' / ${widget.data.rentalType}',
                                           style: greyLightTextStyle.copyWith(
                                             fontSize: 12,
                                           ),

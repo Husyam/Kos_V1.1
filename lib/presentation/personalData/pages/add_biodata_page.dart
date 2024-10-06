@@ -22,7 +22,7 @@ class AddAddressPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Data Diri'),
+        title: const Text('Tambah Data Pemesan'),
         centerTitle: true,
       ),
       body: ListView(
@@ -96,7 +96,8 @@ class AddAddressPage extends StatelessWidget {
                           professionController.text.isEmpty ||
                           phoneNumberController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Harap isi semua field')),
+                          const SnackBar(
+                              content: Text('Harap isi semua field')),
                         );
                         return;
                       }

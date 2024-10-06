@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/components/buttons.dart';
@@ -99,11 +101,16 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 error: (message) {
                   if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        backgroundColor: AppColors.red,
-                        content: Text(message),
-                      ),
+                    // ScaffoldMessenger.of(context).showSnackBar(
+                    //   SnackBar(
+                    //     backgroundColor: AppColors.red,
+                    //     content: Text(message),
+                    //   ),
+                    // );
+                    QuickAlert.show(
+                      context: context,
+                      type: QuickAlertType.error,
+                      title: message,
                     );
                   }
                 },

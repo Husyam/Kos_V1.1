@@ -39,7 +39,7 @@ class ProductTile extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '${data.product!.price?.currencyFormatRp} x ${data.quantity} bulan = ${(data.product!.price! * data.quantity! + 8000).currencyFormatRp}',
+                    '${data.product!.price?.currencyFormatRp} x ${data.quantity} = ${(data.product!.price! * data.quantity! + 8000).currencyFormatRp}',
                     style: const TextStyle(
                       color: AppColors.primary,
                       fontSize: 16,
