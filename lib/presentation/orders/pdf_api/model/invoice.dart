@@ -33,14 +33,14 @@ class InvoiceItem {
   final String description;
   final DateTime date;
   final int quantity;
-  final double vat;
+  final double pajak;
   final double unitPrice;
 
   const InvoiceItem({
     required this.description,
     required this.date,
     required this.quantity,
-    required this.vat,
+    required this.pajak,
     required this.unitPrice,
   });
 }

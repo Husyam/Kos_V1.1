@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kos_mobile_v2_testing/core/components/buttons.dart';
 import 'package:kos_mobile_v2_testing/presentation/orders/bloc/order_detail/order_detail_bloc.dart';
 
 import '../../../core/components/spaces.dart';
@@ -98,64 +99,65 @@ class _TrackingOrderPageState extends State<TrackingOrderPage> {
                         fontSize: 16,
                       ),
                     ),
-                    // ButtonWidget(
-                    //   text: 'Invoice PDF',
-                    //   onClicked: () async {
-                    //     final date = DateTime.now();
-                    //     final dueDate = date.add(Duration(days: 7));
+                    const SpaceHeight(16.0),
+                    ButtonWidget(
+                      text: 'Invoice PDF',
+                      onClicked: () async {
+                        final date = DateTime.now();
+                        final dueDate = date.add(const Duration(days: 7));
 
-                    //     // Buat supplier dari pemilik kos
-                    //     final supplier = Supplier(
-                    //       name:
-                    //           'Pemilik Kos', // Anda dapat mengganti ini dengan nama pemilik kos yang sebenarnya
-                    //       address:
-                    //           'Alamat Kos', // Anda dapat mengganti ini dengan alamat kos yang sebenarnya
-                    //       paymentInfo:
-                    //           'Informasi Pembayaran', // Anda dapat mengganti ini dengan informasi pembayaran yang sebenarnya
-                    //     );
+                        // Buat supplier dari pemilik kos
+                        final supplier = Supplier(
+                          name: orderDetail
+                                  .orderItems?.first.product?.nameOwner ??
+                              'Pemilik Kos',
+                          address:
+                              orderDetail.orderItems?.first.product?.address ??
+                                  'Alamat Kos',
+                          paymentInfo: 'Informasi Pembayaran',
+                        );
 
-                    //     // Buat customer dari data pemesan
-                    //     final customer = Customer(
-                    //       name: orderDetail.personalData?.name ?? '-',
-                    //       address:
-                    //           'Alamat Pemesanan', // Anda dapat mengganti ini dengan alamat pemesan yang sebenarnya
-                    //     );
+                        // Buat customer dari data pemesan
+                        final customer = Customer(
+                          name: orderDetail.personalData?.name ?? '-',
+                          contact: orderDetail.personalData?.contact ?? '-',
+                        );
 
-                    //     // Buat invoice item dari data pemesanan
-                    //     final items = orderDetail.orderItems!.map((item) {
-                    //       return InvoiceItem(
-                    //         description: item.product?.name ?? '-',
-                    //         date: DateTime.now(),
-                    //         quantity: item.quantity?.toInt() ?? 0,
-                    //         vat:
-                    //             0.0, // Anda dapat mengganti ini dengan nilai pajak yang sebenarnya
-                    //         unitPrice: item.product?.price?.toDouble() ??
-                    //             0.0, // Anda dapat mengganti ini dengan harga satuan yang sebenarnya
-                    //       );
-                    //     }).toList();
+                        // Buat invoice item dari data pemesanan
+                        final items = orderDetail.orderItems!.map((item) {
+                          return InvoiceItem(
+                            description: item.product?.name ?? '-',
+                            date: orderDetail.updatedAt ?? DateTime.now(),
+                            quantity: item.quantity?.toInt() ?? 0,
+                            unitPrice: orderDetail.subTotal!.toDouble(),
+                            pajak:
+                                8000, // Anda dapat mengganti ini dengan nilai pajak yang sebenarnya
+                            //unitPrice + vat
+                          );
+                        }).toList();
 
-                    //     // Buat invoice info
-                    //     final invoiceInfo = InvoiceInfo(
-                    //       description:
-                    //           'My description...', // Anda dapat mengganti ini dengan deskripsi yang sebenarnya
-                    //       number: '${DateTime.now().year}-9999',
-                    //       date: date,
-                    //       dueDate: dueDate,
-                    //     );
+                        // Buat invoice info
+                        final invoiceInfo = InvoiceInfo(
+                          description:
+                              'Invoice ini dapat digunakan sebagai bukti pembayaran',
+                          number: orderDetail.transactionNumber ?? 'INV-001',
+                          date: date,
+                          dueDate: dueDate,
+                        );
 
-                    //     // Buat invoice
-                    //     final invoice = Invoice(
-                    //       supplier: supplier,
-                    //       customer: customer,
-                    //       info: invoiceInfo,
-                    //       items: items,
-                    //     );
+                        // Buat invoice
+                        final invoice = Invoice(
+                          supplier: supplier,
+                          customer: customer,
+                          info: invoiceInfo,
+                          items: items,
+                        );
 
-                    //     final pdfFile = await PdfInvoiceApi.generate(invoice);
+                        final pdfFile = await PdfInvoiceApi.generate(invoice);
 
-                    //     PdfApi.openFile(pdfFile);
-                    //   },
-                    // ),
+                        PdfApi.openFile(pdfFile);
+                      },
+                    ),
                   ],
                 );
               } else {
