@@ -1,5 +1,6 @@
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/model/customer.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/model/supplier.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/models/customer.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/models/supplier.dart';
 
 class Invoice {
   final InvoiceInfo info;
@@ -20,12 +21,16 @@ class InvoiceInfo {
   final String number;
   final DateTime date;
   final DateTime dueDate;
+  final String namaBank;
+  final String statusPembayaran;
 
   const InvoiceInfo({
     required this.description,
     required this.number,
     required this.date,
     required this.dueDate,
+    required this.namaBank,
+    required this.statusPembayaran,
   });
 }
 

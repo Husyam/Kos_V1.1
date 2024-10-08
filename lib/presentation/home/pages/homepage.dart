@@ -184,31 +184,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           const SpaceHeight(18.0),
-          // BlocBuilder<BidarProductBloc, BidarProductState>(
-          //   builder: (context, state) {
-          //     return state.maybeWhen(
-          //       loading: () => const Center(
-          //         child: CircularProgressIndicator(),
-          //       ),
-          //       error: (message) => Center(
-          //         child: Text(message),
-          //       ),
-          //       orElse: () => const SizedBox(),
-          //       loaded: (products) {
-          //         return ProductList(
-          //           title: 'Bidar',
-          //           onSeeAllTap: () {
-          //             // context.goNamed(
-          //             //   RouteConstants.allProduct,
-          //             //   pathParameters: PathParameters().toMap(),
-          //             // );
-          //           },
-          //           items: products,
-          //         );
-          //       },
-          //     );
-          //   },
-          // ),
+
           BlocBuilder<BidarProductBloc, BidarProductState>(
             builder: (context, state) {
               return state.maybeWhen(

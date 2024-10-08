@@ -6,11 +6,11 @@ import 'package:kos_mobile_v2_testing/presentation/orders/bloc/order_detail/orde
 
 import '../../../core/components/spaces.dart';
 
-import '../pdf_api/model/customer.dart';
-import '../pdf_api/model/invoice.dart';
-import '../pdf_api/model/supplier.dart';
-import '../pdf_api/pdf_api.dart';
-import '../pdf_api/pdf_invoice_api.dart';
+import '../pdf/models/customer.dart';
+import '../pdf/models/invoice.dart';
+import '../pdf/models/supplier.dart';
+import '../pdf/api/pdf_api.dart';
+import '../pdf/api/pdf_invoice_api.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/product_tile.dart';
 
@@ -129,10 +129,8 @@ class _TrackingOrderPageState extends State<TrackingOrderPage> {
                             description: item.product?.name ?? '-',
                             date: orderDetail.updatedAt ?? DateTime.now(),
                             quantity: item.quantity?.toInt() ?? 0,
-                            unitPrice: orderDetail.subTotal!.toDouble(),
-                            pajak:
-                                8000, // Anda dapat mengganti ini dengan nilai pajak yang sebenarnya
-                            //unitPrice + vat
+                            unitPrice: (item.product?.price ?? 0).toDouble(),
+                            pajak: 8000,
                           );
                         }).toList();
 
@@ -143,6 +141,10 @@ class _TrackingOrderPageState extends State<TrackingOrderPage> {
                           number: orderDetail.transactionNumber ?? 'INV-001',
                           date: date,
                           dueDate: dueDate,
+                          namaBank: 'Bank ${orderDetail.paymentVaName}',
+                          statusPembayaran: orderDetail.status == 'pending'
+                              ? 'Menunggu Pembayaran'
+                              : 'Lunas',
                         );
 
                         // Buat invoice

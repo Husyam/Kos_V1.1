@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:intl/intl.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/model/customer.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/model/invoice.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/model/supplier.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/pdf_api.dart';
-import 'package:kos_mobile_v2_testing/presentation/orders/pdf_api/utils.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/models/customer.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/models/invoice.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/models/supplier.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/api/pdf_api.dart';
+import 'package:kos_mobile_v2_testing/presentation/orders/pdf/utils/utils.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf/widgets.dart';
@@ -32,20 +32,20 @@ class PdfInvoiceApi {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 1 * PdfPageFormat.cm),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //     buildSupplierAddress(invoice.supplier),
-          //     Container(
-          //       height: 50,
-          //       width: 50,
-          //       child: BarcodeWidget(
-          //         barcode: Barcode.qrCode(),
-          //         data: invoice.info.number,
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              buildSupplierAddress(invoice.supplier),
+              // Container(
+              //   height: 50,
+              //   width: 50,
+              //   child: BarcodeWidget(
+              //     barcode: Barcode.qrCode(),
+              //     data: invoice.info.number,
+              //   ),
+              // ),
+            ],
+          ),
           SizedBox(height: 1 * PdfPageFormat.cm),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -61,7 +61,10 @@ class PdfInvoiceApi {
   static Widget buildCustomerAddress(Customer customer) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(customer.name, style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(
+            customer.name,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+          ),
           Text(customer.contact),
         ],
       );
@@ -70,10 +73,14 @@ class PdfInvoiceApi {
     final titles = <String>[
       'Invoice Number:',
       'Invoice Date:',
+      'Nama Bank:',
+      'Status Pembayaran:',
     ];
     final data = <String>[
       info.number,
       Utils.formatDate(info.date),
+      info.namaBank,
+      info.statusPembayaran,
     ];
 
     return Column(
@@ -90,9 +97,20 @@ class PdfInvoiceApi {
   static Widget buildSupplierAddress(Supplier supplier) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(supplier.name, style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(
+            supplier.name,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+          ),
           SizedBox(height: 1 * PdfPageFormat.mm),
-          Text(supplier.address),
+          // Text(supplier.address,),
+          Text(
+            supplier.address,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: const TextStyle(
+              fontSize: 12,
+            ),
+          ),
         ],
       );
 
@@ -119,16 +137,23 @@ class PdfInvoiceApi {
       'Total'
     ];
     final data = invoice.items.map((item) {
-      final total = item.unitPrice + item.pajak;
-      // final total = item.unitPrice * item.quantity * item.pajak;
+      // final total = item.unitPrice + item.pajak * item.quantity;
+
+      // durasi sewa * harga kamar + pajak
+      final total = item.unitPrice * item.quantity + item.pajak;
+      final numberFormat = NumberFormat.currency(
+        locale: 'id',
+        symbol: 'Rp ',
+        decimalDigits: 0,
+      );
 
       return [
         item.description,
         Utils.formatDate(item.date),
         '${item.quantity}',
-        'Rp ${item.unitPrice}',
-        'Rp ${item.pajak}',
-        'Rp ${total.toStringAsFixed(1)}',
+        numberFormat.format(item.unitPrice),
+        numberFormat.format(item.pajak),
+        numberFormat.format(total),
       ];
     }).toList();
 
@@ -152,7 +177,9 @@ class PdfInvoiceApi {
 
   static Widget buildTotal(Invoice invoice) {
     final netTotal = invoice.items
-        .map<double>((item) => (item.unitPrice + item.pajak) * item.quantity)
+        .map<double>(
+          (item) => (item.unitPrice * item.quantity + item.pajak),
+        )
         .reduce((value, element) => value + element);
     final total = netTotal;
 
@@ -167,7 +194,7 @@ class PdfInvoiceApi {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildText(
-                  title: 'Net total',
+                  title: 'Total + Pajak',
                   value: NumberFormat.currency(
                     locale: 'id',
                     symbol: 'Rp ',
