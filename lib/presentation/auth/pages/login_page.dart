@@ -147,13 +147,21 @@ class _LoginPageState extends State<LoginPage> {
               Flexible(child: Divider()),
             ],
           ),
-          const SpaceHeight(50.0),
-          // Button.outlined(
-          //   onPressed: () {},
-          //   label: 'Login with Google',
-          //   icon: Assets.images.google.image(height: 20.0),
-          // ),
-          // const SpaceHeight(50.0),
+          // buttonn text lupapassword
+          InkWell(
+            onTap: () {
+              context.goNamed(RouteConstants.forgotPassword);
+            },
+            child: const Text(
+              'Forgot Password?',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: AppColors.grey,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SpaceHeight(20.0),
           InkWell(
             onTap: () {
               context.goNamed(RouteConstants.register);

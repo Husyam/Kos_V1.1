@@ -76,6 +76,9 @@ class _$AddpersonaldataEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AddpersonaldataEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -92,6 +95,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddpersonaldataEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -200,6 +206,8 @@ class __$$AddPersonalDataImplCopyWithImpl<$Res>
       _$AddPersonalDataImpl _value, $Res Function(_$AddPersonalDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddpersonaldataEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -239,7 +247,9 @@ class _$AddPersonalDataImpl implements _AddPersonalData {
   @override
   int get hashCode => Object.hash(runtimeType, personalRequestModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddpersonaldataEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddPersonalDataImplCopyWith<_$AddPersonalDataImpl> get copyWith =>
@@ -318,7 +328,10 @@ abstract class _AddPersonalData implements AddpersonaldataEvent {
       _$AddPersonalDataImpl;
 
   PersonalRequestModel get personalRequestModel;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddpersonaldataEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddPersonalDataImplCopyWith<_$AddPersonalDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -394,6 +407,9 @@ class _$AddpersonaldataStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -410,6 +426,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -524,6 +543,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -641,6 +663,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -679,7 +703,9 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -764,7 +790,10 @@ abstract class _Error implements AddpersonaldataState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -783,6 +812,9 @@ class __$$LoadedImplCopyWithImpl<$Res>
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AddpersonaldataState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

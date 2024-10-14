@@ -4,6 +4,7 @@ import 'package:kos_mobile_v2_testing/presentation/personalData/pages/biodata_pa
 
 import '../../data/models/responses/product_response_mode.dart';
 import '../../presentation/account/pages/edit_profile.dart';
+import '../../presentation/auth/pages/forgot_password.dart';
 import '../../presentation/auth/pages/login_page.dart';
 import '../../presentation/auth/pages/register_page.dart';
 
@@ -42,6 +43,11 @@ class AppRouter {
             name: RouteConstants.register,
             path: RouteConstants.registerPath,
             builder: (context, state) => const RegisterPage(),
+          ),
+          GoRoute(
+            name: RouteConstants.forgotPassword,
+            path: RouteConstants.forgotPasswordPath,
+            builder: (context, state) => ForgotPassword(),
           ),
         ],
       ),

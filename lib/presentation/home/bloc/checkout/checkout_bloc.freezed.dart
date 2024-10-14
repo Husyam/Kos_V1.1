@@ -90,6 +90,9 @@ class _$CheckoutEventCopyWithImpl<$Res, $Val extends CheckoutEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -106,6 +109,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -229,6 +235,8 @@ class __$$AddItemImplCopyWithImpl<$Res>
       _$AddItemImpl _value, $Res Function(_$AddItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -267,7 +275,9 @@ class _$AddItemImpl implements _AddItem {
   @override
   int get hashCode => Object.hash(runtimeType, product);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddItemImplCopyWith<_$AddItemImpl> get copyWith =>
@@ -358,7 +368,10 @@ abstract class _AddItem implements CheckoutEvent {
   const factory _AddItem(final Product product) = _$AddItemImpl;
 
   Product get product;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddItemImplCopyWith<_$AddItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -380,6 +393,8 @@ class __$$RemoveItemImplCopyWithImpl<$Res>
       _$RemoveItemImpl _value, $Res Function(_$RemoveItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -418,7 +433,9 @@ class _$RemoveItemImpl implements _RemoveItem {
   @override
   int get hashCode => Object.hash(runtimeType, product);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
@@ -509,7 +526,10 @@ abstract class _RemoveItem implements CheckoutEvent {
   const factory _RemoveItem(final Product product) = _$RemoveItemImpl;
 
   Product get product;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RemoveItemImplCopyWith<_$RemoveItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -531,6 +551,8 @@ class __$$AddPersonalDataIdImplCopyWithImpl<$Res>
       $Res Function(_$AddPersonalDataIdImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -570,7 +592,9 @@ class _$AddPersonalDataIdImpl implements _AddPersonalDataId {
   @override
   int get hashCode => Object.hash(runtimeType, personalDataId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddPersonalDataIdImplCopyWith<_$AddPersonalDataIdImpl> get copyWith =>
@@ -663,7 +687,10 @@ abstract class _AddPersonalDataId implements CheckoutEvent {
       _$AddPersonalDataIdImpl;
 
   int get personalDataId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddPersonalDataIdImplCopyWith<_$AddPersonalDataIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -685,6 +712,8 @@ class __$$AddPaymentMethodImplCopyWithImpl<$Res>
       $Res Function(_$AddPaymentMethodImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -724,7 +753,9 @@ class _$AddPaymentMethodImpl implements _AddPaymentMethod {
   @override
   int get hashCode => Object.hash(runtimeType, paymentMethod);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddPaymentMethodImplCopyWith<_$AddPaymentMethodImpl> get copyWith =>
@@ -817,7 +848,10 @@ abstract class _AddPaymentMethod implements CheckoutEvent {
       _$AddPaymentMethodImpl;
 
   String get paymentMethod;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddPaymentMethodImplCopyWith<_$AddPaymentMethodImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -898,6 +932,9 @@ class _$CheckoutStateCopyWithImpl<$Res, $Val extends CheckoutState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -914,6 +951,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1034,6 +1074,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1161,6 +1204,8 @@ class __$$LoadedImplCopyWithImpl<$Res>
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1239,7 +1284,9 @@ class _$LoadedImpl implements _Loaded {
       paymentVaName,
       paymentMethod);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -1337,7 +1384,10 @@ abstract class _Loaded implements CheckoutState {
   int get personalDataId;
   String get paymentVaName;
   String get paymentMethod;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1359,6 +1409,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1397,7 +1449,9 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -1488,7 +1542,10 @@ abstract class _Error implements CheckoutState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CheckoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

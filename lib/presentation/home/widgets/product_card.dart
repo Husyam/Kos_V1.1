@@ -180,9 +180,9 @@ class ProductCard extends StatelessWidget {
                           type: QuickAlertType.error,
                           title: 'Silahkan login terlebih dahulu',
                         );
-                        await Future.delayed(const Duration(
-                            seconds:
-                                3)); // Tambahkan delay untuk menampilkan pesan QuickAlert
+                        await Future.delayed(
+                          const Duration(seconds: 5),
+                        );
                         context.goNamed(RouteConstants.login);
                       } else {
                         context

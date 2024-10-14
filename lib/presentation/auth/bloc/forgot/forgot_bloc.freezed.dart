@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'bidar_product_bloc.dart';
+part of 'forgot_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,65 +15,65 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$BidarProductEvent {
+mixin _$ForgotEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getBidarProducts,
+    required TResult Function(String email) forgotPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getBidarProducts,
+    TResult? Function(String email)? forgotPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getBidarProducts,
+    TResult Function(String email)? forgotPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetBidarProducts value) getBidarProducts,
+    required TResult Function(_ForgotPassword value) forgotPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetBidarProducts value)? getBidarProducts,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetBidarProducts value)? getBidarProducts,
+    TResult Function(_ForgotPassword value)? forgotPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BidarProductEventCopyWith<$Res> {
-  factory $BidarProductEventCopyWith(
-          BidarProductEvent value, $Res Function(BidarProductEvent) then) =
-      _$BidarProductEventCopyWithImpl<$Res, BidarProductEvent>;
+abstract class $ForgotEventCopyWith<$Res> {
+  factory $ForgotEventCopyWith(
+          ForgotEvent value, $Res Function(ForgotEvent) then) =
+      _$ForgotEventCopyWithImpl<$Res, ForgotEvent>;
 }
 
 /// @nodoc
-class _$BidarProductEventCopyWithImpl<$Res, $Val extends BidarProductEvent>
-    implements $BidarProductEventCopyWith<$Res> {
-  _$BidarProductEventCopyWithImpl(this._value, this._then);
+class _$ForgotEventCopyWithImpl<$Res, $Val extends ForgotEvent>
+    implements $ForgotEventCopyWith<$Res> {
+  _$ForgotEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BidarProductEvent
+  /// Create a copy of ForgotEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -86,13 +86,13 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$BidarProductEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$ForgotEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductEvent
+  /// Create a copy of ForgotEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -103,7 +103,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'BidarProductEvent.started()';
+    return 'ForgotEvent.started()';
   }
 
   @override
@@ -119,7 +119,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getBidarProducts,
+    required TResult Function(String email) forgotPassword,
   }) {
     return started();
   }
@@ -128,7 +128,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getBidarProducts,
+    TResult? Function(String email)? forgotPassword,
   }) {
     return started?.call();
   }
@@ -137,7 +137,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getBidarProducts,
+    TResult Function(String email)? forgotPassword,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -150,7 +150,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetBidarProducts value) getBidarProducts,
+    required TResult Function(_ForgotPassword value) forgotPassword,
   }) {
     return started(this);
   }
@@ -159,7 +159,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetBidarProducts value)? getBidarProducts,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
   }) {
     return started?.call(this);
   }
@@ -168,7 +168,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetBidarProducts value)? getBidarProducts,
+    TResult Function(_ForgotPassword value)? forgotPassword,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -178,75 +178,103 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements BidarProductEvent {
+abstract class _Started implements ForgotEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetBidarProductsImplCopyWith<$Res> {
-  factory _$$GetBidarProductsImplCopyWith(_$GetBidarProductsImpl value,
-          $Res Function(_$GetBidarProductsImpl) then) =
-      __$$GetBidarProductsImplCopyWithImpl<$Res>;
+abstract class _$$ForgotPasswordImplCopyWith<$Res> {
+  factory _$$ForgotPasswordImplCopyWith(_$ForgotPasswordImpl value,
+          $Res Function(_$ForgotPasswordImpl) then) =
+      __$$ForgotPasswordImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email});
 }
 
 /// @nodoc
-class __$$GetBidarProductsImplCopyWithImpl<$Res>
-    extends _$BidarProductEventCopyWithImpl<$Res, _$GetBidarProductsImpl>
-    implements _$$GetBidarProductsImplCopyWith<$Res> {
-  __$$GetBidarProductsImplCopyWithImpl(_$GetBidarProductsImpl _value,
-      $Res Function(_$GetBidarProductsImpl) _then)
+class __$$ForgotPasswordImplCopyWithImpl<$Res>
+    extends _$ForgotEventCopyWithImpl<$Res, _$ForgotPasswordImpl>
+    implements _$$ForgotPasswordImplCopyWith<$Res> {
+  __$$ForgotPasswordImplCopyWithImpl(
+      _$ForgotPasswordImpl _value, $Res Function(_$ForgotPasswordImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductEvent
+  /// Create a copy of ForgotEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$ForgotPasswordImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetBidarProductsImpl implements _GetBidarProducts {
-  const _$GetBidarProductsImpl();
+class _$ForgotPasswordImpl implements _ForgotPassword {
+  const _$ForgotPasswordImpl({required this.email});
+
+  @override
+  final String email;
 
   @override
   String toString() {
-    return 'BidarProductEvent.getBidarProducts()';
+    return 'ForgotEvent.forgotPassword(email: $email)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetBidarProductsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ForgotPasswordImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, email);
+
+  /// Create a copy of ForgotEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ForgotPasswordImplCopyWith<_$ForgotPasswordImpl> get copyWith =>
+      __$$ForgotPasswordImplCopyWithImpl<_$ForgotPasswordImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getBidarProducts,
+    required TResult Function(String email) forgotPassword,
   }) {
-    return getBidarProducts();
+    return forgotPassword(email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getBidarProducts,
+    TResult? Function(String email)? forgotPassword,
   }) {
-    return getBidarProducts?.call();
+    return forgotPassword?.call(email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getBidarProducts,
+    TResult Function(String email)? forgotPassword,
     required TResult orElse(),
   }) {
-    if (getBidarProducts != null) {
-      return getBidarProducts();
+    if (forgotPassword != null) {
+      return forgotPassword(email);
     }
     return orElse();
   }
@@ -255,45 +283,54 @@ class _$GetBidarProductsImpl implements _GetBidarProducts {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetBidarProducts value) getBidarProducts,
+    required TResult Function(_ForgotPassword value) forgotPassword,
   }) {
-    return getBidarProducts(this);
+    return forgotPassword(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetBidarProducts value)? getBidarProducts,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
   }) {
-    return getBidarProducts?.call(this);
+    return forgotPassword?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetBidarProducts value)? getBidarProducts,
+    TResult Function(_ForgotPassword value)? forgotPassword,
     required TResult orElse(),
   }) {
-    if (getBidarProducts != null) {
-      return getBidarProducts(this);
+    if (forgotPassword != null) {
+      return forgotPassword(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetBidarProducts implements BidarProductEvent {
-  const factory _GetBidarProducts() = _$GetBidarProductsImpl;
+abstract class _ForgotPassword implements ForgotEvent {
+  const factory _ForgotPassword({required final String email}) =
+      _$ForgotPasswordImpl;
+
+  String get email;
+
+  /// Create a copy of ForgotEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ForgotPasswordImplCopyWith<_$ForgotPasswordImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$BidarProductState {
+mixin _$ForgotState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Product> bidarProducts) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -301,7 +338,7 @@ mixin _$BidarProductState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Product> bidarProducts)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -309,7 +346,7 @@ mixin _$BidarProductState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Product> bidarProducts)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -342,23 +379,23 @@ mixin _$BidarProductState {
 }
 
 /// @nodoc
-abstract class $BidarProductStateCopyWith<$Res> {
-  factory $BidarProductStateCopyWith(
-          BidarProductState value, $Res Function(BidarProductState) then) =
-      _$BidarProductStateCopyWithImpl<$Res, BidarProductState>;
+abstract class $ForgotStateCopyWith<$Res> {
+  factory $ForgotStateCopyWith(
+          ForgotState value, $Res Function(ForgotState) then) =
+      _$ForgotStateCopyWithImpl<$Res, ForgotState>;
 }
 
 /// @nodoc
-class _$BidarProductStateCopyWithImpl<$Res, $Val extends BidarProductState>
-    implements $BidarProductStateCopyWith<$Res> {
-  _$BidarProductStateCopyWithImpl(this._value, this._then);
+class _$ForgotStateCopyWithImpl<$Res, $Val extends ForgotState>
+    implements $ForgotStateCopyWith<$Res> {
+  _$ForgotStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -371,13 +408,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BidarProductStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$ForgotStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -388,7 +425,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'BidarProductState.initial()';
+    return 'ForgotState.initial()';
   }
 
   @override
@@ -405,7 +442,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Product> bidarProducts) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -416,7 +453,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Product> bidarProducts)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -427,7 +464,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Product> bidarProducts)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -475,7 +512,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements BidarProductState {
+abstract class _Initial implements ForgotState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -488,13 +525,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$BidarProductStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$ForgotStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -505,7 +542,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'BidarProductState.loading()';
+    return 'ForgotState.loading()';
   }
 
   @override
@@ -522,7 +559,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Product> bidarProducts) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -533,7 +570,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Product> bidarProducts)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -544,7 +581,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Product> bidarProducts)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -592,7 +629,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements BidarProductState {
+abstract class _Loading implements ForgotState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -601,83 +638,48 @@ abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<Product> bidarProducts});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$BidarProductStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$ForgotStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? bidarProducts = null,
-  }) {
-    return _then(_$LoadedImpl(
-      null == bidarProducts
-          ? _value._bidarProducts
-          : bidarProducts // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<Product> bidarProducts)
-      : _bidarProducts = bidarProducts;
-
-  final List<Product> _bidarProducts;
-  @override
-  List<Product> get bidarProducts {
-    if (_bidarProducts is EqualUnmodifiableListView) return _bidarProducts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bidarProducts);
-  }
+  const _$LoadedImpl();
 
   @override
   String toString() {
-    return 'BidarProductState.loaded(bidarProducts: $bidarProducts)';
+    return 'ForgotState.loaded()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._bidarProducts, _bidarProducts));
+        (other.runtimeType == runtimeType && other is _$LoadedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_bidarProducts));
-
-  /// Create a copy of BidarProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Product> bidarProducts) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(bidarProducts);
+    return loaded();
   }
 
   @override
@@ -685,10 +687,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Product> bidarProducts)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(bidarProducts);
+    return loaded?.call();
   }
 
   @override
@@ -696,12 +698,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Product> bidarProducts)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(bidarProducts);
+      return loaded();
     }
     return orElse();
   }
@@ -744,16 +746,8 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements BidarProductState {
-  const factory _Loaded(final List<Product> bidarProducts) = _$LoadedImpl;
-
-  List<Product> get bidarProducts;
-
-  /// Create a copy of BidarProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Loaded implements ForgotState {
+  const factory _Loaded() = _$LoadedImpl;
 }
 
 /// @nodoc
@@ -767,13 +761,13 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$BidarProductStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$ForgotStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -799,7 +793,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'BidarProductState.error(message: $message)';
+    return 'ForgotState.error(message: $message)';
   }
 
   @override
@@ -813,7 +807,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -826,7 +820,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Product> bidarProducts) loaded,
+    required TResult Function() loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -837,7 +831,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Product> bidarProducts)? loaded,
+    TResult? Function()? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -848,7 +842,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Product> bidarProducts)? loaded,
+    TResult Function()? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -896,12 +890,12 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements BidarProductState {
+abstract class _Error implements ForgotState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
 
-  /// Create a copy of BidarProductState
+  /// Create a copy of ForgotState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>

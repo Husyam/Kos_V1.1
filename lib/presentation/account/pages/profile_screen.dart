@@ -91,8 +91,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Row(
                       children: [
                         Container(
-                          width: 95,
-                          height: 130,
+                          width: 85,
+                          height: 85,
                           margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),

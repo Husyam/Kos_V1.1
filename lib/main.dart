@@ -80,6 +80,9 @@ class MyApp extends StatelessWidget {
           create: (context) => LogoutBloc(AuthRemoteDatasource()),
         ),
         BlocProvider(
+          create: (context) => LogoutBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
           create: (context) => PersonalBloc(PersonalRemoteDatasource()),
         ),
         BlocProvider(

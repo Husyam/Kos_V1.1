@@ -13,6 +13,10 @@ class RouteConstants {
   static const String register = 'register';
   static const String registerPath = 'register';
 
+  /// route for page [ForgotPassword]
+  static const String forgotPassword = 'forgot_password';
+  static const String forgotPasswordPath = 'forgot_password';
+
   /// route for page [VerificationPage]
   static const String verification = 'verification';
   static const String verificationPath = 'verification';

@@ -75,6 +75,29 @@ class AuthRemoteDatasource {
     }
   }
 
+  //forgot password
+  Future<Either<String, String>> forgotPassword(String email) async {
+    try {
+      final response = await http.post(
+        Uri.parse('${Variables.baseUrl}/api/forgot-password'),
+        body: {
+          'email': email,
+        },
+        headers: {
+          'Accept': 'application/json',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        return Right(response.body);
+      } else {
+        return Left(response.body);
+      }
+    } catch (e) {
+      return Left('Error: $e');
+    }
+  }
+
   Future<int?> getUserId() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final userId = prefs.getInt('userId');
