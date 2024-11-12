@@ -172,8 +172,11 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             GestureDetector(
+              // onTap: () {
+              //   Navigator.pushNamed(context, '/register');
+              // },
               onTap: () {
-                Navigator.pushNamed(context, '/register');
+                context.goNamed(RouteConstants.forgotPassword);
               },
               child: Text(
                 'Forgot Password?',
