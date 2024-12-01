@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "428357408268",
     "project_id": "kos-pal",
-    "storage_bucket": "kos-pal.appspot.com"
+    "storage_bucket": "kos-pal.firebasestorage.app"
   },
   "client": [
     {
