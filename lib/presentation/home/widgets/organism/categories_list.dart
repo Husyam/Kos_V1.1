@@ -3,7 +3,6 @@ import "package:flutter/material.dart";
 import "package:kos_mobile_v2_testing/core/constants/variables.dart";
 import "package:kos_mobile_v2_testing/data/models/responses/product_response_mode.dart";
 
-
 import "../product_card.dart";
 
 class CategoriesList extends StatelessWidget {
