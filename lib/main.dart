@@ -35,6 +35,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+    name: 'Kos Pal',
   );
   await FirebaseMessagingRemoteDatasource().initialize();
   runApp(const MyApp());
